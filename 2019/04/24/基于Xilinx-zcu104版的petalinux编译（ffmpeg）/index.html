@@ -11,7 +11,8 @@
 <p>（如遇到问题请在我的github<a href="https://github.com/suikammd/suikammd.github.io/issues" target="_blank" rel="noopener">suikammd</a>上提issue，谢谢，还没有搞评论区，拖延症=。=）</p>
 <h1 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h1><ol>
 <li>Ubuntu虚拟机，我是在Google Cloud Engine上免费申请的虚拟机，区域是台湾，速度比较快，大小是15GB内存、4个vCPU以及60GB硬盘。（不要自己折腾VMware，后续petalinux编译需要翻墙，速度极慢，而且GCE上面可以随便折腾，感谢咕咕！）</li>
-<li>Petalinux SDK Installer、zcu104 BSP file，这两个文件均可以在<a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html" target="_blank" rel="noopener">file download</a>中下载，我下载的版本都是2018.1的。如果需要下载高版本的，请注意查看板子是否支持，SDK installer和BSP的版本必须一致！</li>
+<li>Petalinux SDK Installer、zcu104 BSP file，这两个文件均可以在<a href="https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/embedded-design-tools.html" target="_blank" rel="noopener">file download</a>中下载，我下载的版本都是2018.1的。如果需要下载高版本的，请注意查看板子是否支持，SDK installer和BSP的版本必须一致！<a id="more"></a>
+</li>
 </ol>
 <h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><ol>
 <li><p><em>GCE账号配置</em>：申请GCE账号就不多说了，记得在申请虚拟机时，在防火墙处勾选允许HTTP流量、允许HTTPS流量，并在SSH密钥处添加你的公钥。这样就会自动生成虚拟机的外部IP，通过ssh连上去就可以使用了。</p>
@@ -21,7 +22,6 @@
 <p>在安装过程中发现还需要安装<code>zlib1g-dev:i386</code>，这时候只要</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg --add-architecture i386</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install zlib1g-dev:i386</span><br></pre></td></tr></table></figure>
 <p>这样我们的依赖包就安装完毕了。</p>
-<a id="more"></a>
 </li>
 <li><p><em>下载Petalinux SDK Installer、zcu104 BSP file</em>：wget一下对应的链接就行了，可能需要重命名下载的文件为相应的名称，可以分别是petalinux-v2018.1-final-installer.run、zcu104.bsp。</p>
 </li>
