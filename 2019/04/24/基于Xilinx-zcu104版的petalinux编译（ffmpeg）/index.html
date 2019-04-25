@@ -48,7 +48,7 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd &lt;project_dir&gt;</span><br><span class="line">petalinux-build</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><em>生成固件BOOT.BIN、image.ub</em>：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd &lt;project_dir&gt;</span><br><span class="line">(注意下面这两行是一段代码)</span><br><span class="line">petalinux-package --boot --fsbl ./images/linux/zynqmp_fsbl.elf --fpga ./images/linux/system.bit  --pmufw ./images/linux/pmufw.elf --u-boot</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd &lt;project_dir&gt;</span><br><span class="line">petalinux-package --boot --fsbl ./images/linux/zynqmp_fsbl.elf --fpga ./images/linux/system.bit  --pmufw ./images/linux/pmufw.elf --u-boot</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><em>验证</em>：接下来就是激动人心的时刻了，我们把生成的BOOT.BIN、image.ub拷进SD卡中，放入zcu104板子，选择从SD卡启动，如果能看到linux的操作界面，那就说明你成功啦。若rootfs中包含了ffmpeg，输入ffmpeg验证下ffmpeg是否安装成功。以上。</p>
 </li>
