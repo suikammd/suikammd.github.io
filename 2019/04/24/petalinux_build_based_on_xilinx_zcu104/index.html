@@ -42,6 +42,9 @@
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd &lt;project_dir&gt;</span><br><span class="line">petalinux-config -c rootfs</span><br></pre></td></tr></table></figure>
 <p>在弹框中选择<code>user packages</code>，然后enable ffmpeg即可。</p>
 </li>
+<li><p>U-boot启动自动设置内网ip：</p>
+<p>在<code>&lt;project_dir&gt;</code>输入<code>petalinux-config</code>，依次选择<code>Subsystem AUTO Hardware Settings-&gt;Ethernet Settings-&gt;Obtain IP address automatically</code>，然后取消<code>Obtain IP address automatically</code>，会自动出现三行信息来设置<code>IP address/netmask/gateway</code>。</p>
+</li>
 <li><p><em>编译系统镜像</em>：这个过程稍微有些久，耐心等待即可。为防止遇到奇怪的编码错误，在编译前请加上这三句</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">export LC_ALL=en_US.UTF-8</span><br><span class="line">export LANG=en_US.UTF-8</span><br><span class="line">export LANGUAGE=en_US.UTF-8</span><br></pre></td></tr></table></figure>
 <p>这时候执行下面的代码即可。</p>
