@@ -27,7 +27,13 @@
 </li>
 <li><p><em>安装Petalinux Tools</em>：在安装过程中同意三个协议即可，这样Petalinux Tools就被安装到了/home/xxx/petalinux下。</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">mkdir /home/xxx/petalinux</span><br><span class="line">./petalinux-v2018.1-final-installer.run /home/xxx/petalinux</span><br></pre></td></tr></table></figure>
-<p>不用在意<code>WARNING: No tftp server found</code>。</p>
+<p>不用在意<code>WARNING: No tftp server found</code>，不影响编译，但是可以通过下面的指令消除warning。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt-get install tftpd-hpa</span><br></pre></td></tr></table></figure>
+<p>修改  <code>/etc/default/tftpd-hpa</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo vim /etc/default/tftpd-hpa</span><br></pre></td></tr></table></figure>
+<p>为</p>
+<figure class="highlight makefile"><table><tr><td class="code"><pre><span class="line">TFTP_USERNAME=<span class="string">"tftp"</span></span><br><span class="line">TFTP_DIRECTORY=<span class="string">"/var/lib/tftpboot"</span></span><br><span class="line">TFTP_ADDRESS=<span class="string">"0.0.0.0:69"</span></span><br><span class="line">TFTP_OPTIONS=<span class="string">"-l -c -s"</span></span><br></pre></td></tr></table></figure>
+<p>最后启动tptp server <code>sudo service tftpd-hpa restart</code>，再检查下是否启动成功<code>sudo netstat -a | grep tftp</code>。</p>
 </li>
 <li><p><em>构建Petalinux工作环境</em>：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">source /home/xxx/petalinux/settings.sh</span><br></pre></td></tr></table></figure>
