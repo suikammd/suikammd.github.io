@@ -7,7 +7,7 @@
     error: 'Copy error',
     noSupport: 'The browser does not support'
   }
-} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#最简单的内核驱动代码示例"><span class="toc-number">1.</span> <span class="toc-text">最简单的内核驱动代码示例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#稍微复杂的内核驱动代码示例"><span class="toc-number">2.</span> <span class="toc-text">稍微复杂的内核驱动代码示例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#XILINX-DMAENGINE"><span class="toc-number">3.</span> <span class="toc-text">XILINX DMAENGINE</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DMA基础知识"><span class="toc-number">4.</span> <span class="toc-text">DMA基础知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Petalinux编译驱动遇到的错误"><span class="toc-number">5.</span> <span class="toc-text">Petalinux编译驱动遇到的错误</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src></div><div class="author-info__name text-center">suikammd</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">6</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">4</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Suikammd's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">Petalinux DMA驱动</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-05-12</time><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2019/05/12/write-linux-dma-driver/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2019/05/12/write-linux-dma-driver/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>计划先整理下驱动的基础知识，再介绍下设备树相关dts文件的写法。</p>
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#最简单的内核驱动代码示例"><span class="toc-number">1.</span> <span class="toc-text">最简单的内核驱动代码示例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#稍微复杂的内核驱动代码示例"><span class="toc-number">2.</span> <span class="toc-text">稍微复杂的内核驱动代码示例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DMA基础知识"><span class="toc-number">3.</span> <span class="toc-text">DMA基础知识</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于Petalinux编译DMA驱动"><span class="toc-number">4.</span> <span class="toc-text">基于Petalinux编译DMA驱动</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src></div><div class="author-info__name text-center">suikammd</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">6</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">4</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Suikammd's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">Petalinux DMA驱动</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-05-12</time><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2019/05/12/write-linux-dma-driver/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2019/05/12/write-linux-dma-driver/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>计划先整理下驱动的基础知识，再介绍下设备树相关dts文件的写法。</p>
 <h1 id="最简单的内核驱动代码示例"><a href="#最简单的内核驱动代码示例" class="headerlink" title="最简单的内核驱动代码示例"></a>最简单的内核驱动代码示例</h1><p>首先以最简单的内核驱动代码为例，介绍如何编写以及编译驱动代码。</p>
 <p>内核驱动代码至少需要包含两个函数，init函数(insmod时被调用)、exit函数(rmmod时被调用)。</p>
 <p>简单的内核驱动代码示例如下所示：</p>
@@ -29,7 +29,7 @@
 <p>Makefile与上文示例几乎一致，下面给出测试代码：</p>
 <figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fcntl.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> buffer[<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> fd;</span><br><span class="line">        fd=open(<span class="string">"/dev/mydev"</span>, O_RDWR);</span><br><span class="line">        buffer[<span class="number">0</span>]=<span class="number">0x00</span>;</span><br><span class="line">        write(fd, buffer, <span class="number">1</span>);</span><br><span class="line">        read(fd, buffer);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"Value : 0x%02x\n"</span>, buffer[<span class="number">0</span>]);</span><br><span class="line">        close(fd);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面介绍了驱动代码的编写和编译，接下来介绍下xilinx的DMAENGINE和DMA的基础知识。</p>
-<h1 id="XILINX-DMAENGINE"><a href="#XILINX-DMAENGINE" class="headerlink" title="XILINX DMAENGINE"></a>XILINX DMAENGINE</h1><h1 id="DMA基础知识"><a href="#DMA基础知识" class="headerlink" title="DMA基础知识"></a>DMA基础知识</h1><p>dma一般是内核空间下使用的驱动，用户空间比较复杂。</p>
+<h1 id="DMA基础知识"><a href="#DMA基础知识" class="headerlink" title="DMA基础知识"></a>DMA基础知识</h1><p>dma一般是内核空间下使用的驱动，用户空间比较复杂。</p>
 <p>DMA有两种，<code>Slave-DMA</code>、<code>Async TX</code>：</p>
 <ol>
 <li><p><code>Slave-DMA</code>：memory-&gt;device, device-&gt;memory, device-&gt;device</p>
@@ -66,7 +66,60 @@
 <p>通过API<code>dma_async_is_tx_complete()</code>判断DMA事务是否完成。</p>
 </li>
 </ol>
-<h1 id="Petalinux编译驱动遇到的错误"><a href="#Petalinux编译驱动遇到的错误" class="headerlink" title="Petalinux编译驱动遇到的错误"></a>Petalinux编译驱动遇到的错误</h1><p>1. </p>
+<h1 id="基于Petalinux编译DMA驱动"><a href="#基于Petalinux编译DMA驱动" class="headerlink" title="基于Petalinux编译DMA驱动"></a>基于Petalinux编译DMA驱动</h1><p>请根据<a href="https://suikammd.github.io/2019/04/24/petalinux_build_based_on_xilinx_zcu104/">基于Xilinx zcu104版的petalinux移植linux（ffmpeg）</a>这边文章认真配置环境</p>
+<ul>
+<li><p>Pre-requisites</p>
+<ol>
+<li><p>A zero-copy Linux driver and a userspace interface library for Xilinx’s AXI DMA and VDMA IP blocks. These serve as bridges for communication between the processing system and FPGA programmable logic fabric, through one of the DMA ports on the Zynq processing system.</p>
+<p> <code>git clone https://github.com/bperez77/xilinx_axidma.git</code></p>
+</li>
+</ol>
+</li>
+<li><p>Steps</p>
+<ol>
+<li><p>add hdf to ur petalinux project（这个hdf文件仅仅做了loopback，以下基于此loopback进行介绍）</p>
+</li>
+<li><p><code>petalinux-config --get-hw-description $(UR-HDF-PATH)</code></p>
+<p><code>Image Packaging Configurations -&gt; Root filesystem type -&gt; SD card</code></p>
+<p>取消勾选<code>DTG Settings-&gt;Kernel Bootargs-&gt;generate boot args automatically</code>，set bootargs to <code>earlycon console=ttyPS0,115200 clk_ignore_unused root=/dev/mmcblk0p2 rw rootwait</code></p>
+</li>
+<li><p><code>petalinux-build</code></p>
+<p>在编译过程中，如果卡在fsbl的编译，请执行以下两条指令 </p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo apt install libgtk-3-dev</span><br><span class="line">sudo apt install libgtk2.0-dev</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>create module </p>
+<ul>
+<li><p><code>petalinux-create -t modules -n xilinx-axidma --enable</code></p>
+</li>
+<li><p>进入到git clone的文件夹路径，将所需文件拷贝到petalinux module的路径。这里涉及到三步，第一步拷贝文件，第二步删除不必要的文件，第三步是修改petalinux module文件夹的下的Makefile和.bb文件。</p>
+<p>（1）将git clone下来的文件夹里的文件拷贝到petalinux module的路径<code>&lt;path/to/PetaLinux/project&gt;/project-spec/meta-user/recipes-modules/xilinx-axidma/files</code></p>
+<p><code>cp -a driver/*.c driver/*.h include/axidma_ioctl.h &lt;path/to/PetaLinux/project&gt;/project-spec/meta-user/recipes-modules/xilinx-axidma/files</code> </p>
+<p>（2） 删除<code>xilinx-axidma.c</code></p>
+<p> <code>rm &lt;path/to/PetaLinux/project&gt;/project-spec/meta-user/recipes-modules/xilinx-axidma/files/xilinx-axidma.c</code></p>
+<p>（3） 修改<code>&lt;path/to/PetaLinux/project&gt;/project-spec/meta-user/recipes-modules/xilinx-axidma/files/Makefile</code></p>
+<p>删除Makefile第一行，取代为下面三行代码</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">DRIVER_NAME = xilinx-axidma</span><br><span class="line"><span class="meta">$</span>(DRIVER_NAME)-objs = axi_dma.o axidma_chrdev.o axidma_dma.o axidma_of.o</span><br><span class="line">obj-m := $(DRIVER_NAME).o</span><br></pre></td></tr></table></figure>
+<p> （4） 修改<code>&lt;path/to/PetaLinux/project&gt;/project-spec/meta-user/recipes-modules/xilinx-axidma/xilinx-axidma.bb</code></p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">SRC_URI = "file://Makefile \ </span><br><span class="line">           file://axi_dma.c \</span><br><span class="line">           file://axidma_chrdev.c \</span><br><span class="line">           file://axidma_dma.c \</span><br><span class="line">           file://axidma_of.c \</span><br><span class="line">           file://axidma.h \</span><br><span class="line">           file://axidma_ioctl.h \</span><br><span class="line">           file://COPYING \</span><br><span class="line">          "</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>create app</p>
+<p>这里的app实现的功能是，将从千兆拿到的视频i帧转为yuv格式(基于ffmpeg)送到pl端，再将从pl端返回的结果送回内网的服务器。</p>
+</li>
+<li><p>change the system-user.dtsi according the pl.dtsi.</p>
+<p>（1） 根据之前petalinux-build生成的<code>pl.dtsi</code>，将其中的内容全部复制到<code>system-conf.dtsi</code>，这两个文件的地址均在<code>&lt;path/to/PetaLinux/project&gt;/components/plnx_workspace/device-tree/device-tree</code>，按理说这部分复制进system-user.dtsi也可以，<code>&lt;path/to/PetaLinux/project&gt;/components/plnx_workspace/device-tree/device-tree</code>这个目录下的文件一般是自动生成的。</p>
+<p>（2） 同时删除<code>system-top.dtsi</code>最后一行<code>#include system-user.dtsi</code></p>
+<p>（3） 修改system-user.dtsi（位置<code>/project-spec/meta-user/recipes-bsp/device-tree/files/”</code>），加入以下内容</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/ &#123;</span><br><span class="line">        axidma_chrdev: axidma_chrdev@0 &#123;</span><br><span class="line">        compatible = "xlnx,axidma-chrdev";</span><br><span class="line">        dmas = &lt;&amp;axi_dma_0 0 &amp;axi_dma_0 1&gt;;</span><br><span class="line">        dma-names = "tx_channel", "rx_channel";</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>petalinux-build</code></p>
+</li>
+<li><p><code>petalinux-package --boot --fsbl ./images/linux/zynqmp_fsbl.elf --fpga ./images/linux/system.bit  --pmufw ./images/linux/pmufw.elf --u-boot</code>，生成的文件<code>BOOT.bin、image.ub</code>位于<code>&lt;path/to/PetaLinux/project&gt;/images/linux/</code>下</p>
+</li>
+</ol>
+</li>
+</ul>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">suikammd</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://suikammd.github.io/2019/05/12/write-linux-dma-driver/">https://suikammd.github.io/2019/05/12/write-linux-dma-driver/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/petalinux/">petalinux</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2019/05/29/AWS-Save-Money/"><i class="fa fa-chevron-left">  </i><span>AWS-Save-Money</span></a></div><div class="next-post pull-right"><a href="/2019/04/27/aarch64-cross-compile/"><span>aarch64 交叉编译</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
 var disqus_config = function () {
   this.page.url = 'https://suikammd.github.io/2019/05/12/write-linux-dma-driver/';
