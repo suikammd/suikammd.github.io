@@ -13,7 +13,27 @@
 <li>杜邦线（母对母）</li>
 <li>iPhone手机安装HOME app</li>
 </ul>
-<h1 id="SetUp"><a href="#SetUp" class="headerlink" title="SetUp"></a>SetUp</h1><h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p><img src="https://raw.githubusercontent.com/suikammd/AirConditioner-Homekit/master/resources/images/MainPage.jpg" alt="1"></p>
+<a id="more"></a>
+<h1 id="SetUp"><a href="#SetUp" class="headerlink" title="SetUp"></a>SetUp</h1><ol>
+<li>配置树莓派:<ul>
+<li>将红外发射器件连接到gpio17(in BCM).</li>
+<li>添加 <code>dtoverlay=lirc-rpi,gpio_in_pin=18,gpio_out_pin=17</code> 到 <code>/boot/config.txt</code>.</li>
+<li>安装并配置 <code>Lirc</code> .</li>
+</ul>
+</li>
+<li>配置lircd:<ul>
+<li>把配置文件 <code>air.lircd.conf</code> 放在 <code>/etc/lirc/lircd.conf.d</code> 目录 (确保该文件的后缀是 <code>.conf</code>).</li>
+<li>重启 <code>lirc</code>： <code>sudo systemctl restart lircd.service</code>.</li>
+</ul>
+</li>
+<li>重启程序:<ul>
+<li>把 <code>ac.conf</code> 放在 <code>/etc/supervisor/conf.d</code> .</li>
+<li>使用默认pin<code>23333333</code> 链接配件到HomeKit.</li>
+</ul>
+</li>
+</ol>
+<p>项目地址参考 <a href="https://github.com/suikammd/AirConditioner-Homekit" target="_blank" rel="noopener">AirConditioner-HomeKit</a></p>
+<h1 id="效果展示"><a href="#效果展示" class="headerlink" title="效果展示"></a>效果展示</h1><p><img src="https://raw.githubusercontent.com/suikammd/AirConditioner-Homekit/master/resources/images/MainPage.jpg" alt="1"></p>
 </div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">suikammd</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://suikammd.github.io/2019/08/07/Use-HomeKit-Control-AirConditioner/">https://suikammd.github.io/2019/08/07/Use-HomeKit-Control-AirConditioner/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/HomeKit/">HomeKit</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2020/10/09/build-local-https-server/"><i class="fa fa-chevron-left">  </i><span>搭建本地https服务器</span></a></div><div class="next-post pull-right"><a href="/2019/05/29/AWS-Save-Money/"><span>AWS-Save-Money</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
 var disqus_config = function () {
   this.page.url = 'https://suikammd.github.io/2019/08/07/Use-HomeKit-Control-AirConditioner/';
