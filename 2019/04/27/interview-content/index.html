@@ -1,0 +1,67 @@
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="面试内容整理"><meta name="keywords" content="面试"><meta name="author" content="suikammd"><meta name="copyright" content="suikammd"><title>面试内容整理 | Suikammd's Blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src></div><div class="author-info__name text-center">suikammd</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">10</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">7</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Suikammd's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">面试内容整理</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2019-04-27</time><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2019/04/27/interview-content/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="2019/04/27/interview-content/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p><em>第一类 简述题</em></p>
+<ol>
+<li>进程和线程的区别（头条+百度）<ul>
+<li>进程：进程是系统资源分配的最小单位<ul>
+<li>一个进程可以由很多个线程组成</li>
+<li>进程有独立的地址空间</li>
+</ul>
+</li>
+<li>线程：系统调度的最小单位<ul>
+<li>线程间共享进程的所有资源</li>
+<li>每个线程有自己的栈和局部变量</li>
+<li>线程间通信：共享全局变量，共享进程的上下文环境<a id="more"></a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<p>2.</p>
+<p><em>第二类 算法题</em></p>
+<p>简述题要清晰的描述自己对概念的理解，算法题也是如此，没必要一开始拿到题目就开始写代码，而是理清思路。</p>
+<ol>
+<li><p>实现霍夫曼编码 Huffman Coding（百度）</p>
+<p>霍夫曼编码是基于二叉树构建的压缩编码结构，是典型的压缩算法。这里假定对“we dfab. fsadff dfe ew kkqwww”这句话进行压缩存储，最终得到每个字符对应的变长二进制表示。</p>
+<p><em>思路</em>：首先统计每个字符出现的次数，将结果存入map中。构造优先队列，按照字符出现的次数进行排序，接着依次取出优先队列中最小的两个进行合并，构造新的节点，再将新的节点插入优先队列，重复刚才的操作指导优先队列中只剩下一个节点，也就是根节点。这时候我们就构造出了霍夫曼树。然后从根节点出发，采用dfs的方法对整个树进行遍历，从而实现压缩编码。</p>
+<ul>
+<li><p>规定二叉树的结构：每个节点存储字符及其出现的次数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> count;</span><br><span class="line">    <span class="keyword">char</span> chr;</span><br><span class="line">    TreeNode *left;</span><br><span class="line">    TreeNode *right;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>统计字符出现的次数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> chr : s) &#123;</span><br><span class="line">    m[chr]++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造优先队列：优先队列中存储的是<code>TreeNode*</code>，根据节点中的<code>count</code>大小进行排序，这样我们得到节点从小到大的排列。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// custom comparator</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomCompare</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">operator</span><span class="params">()</span><span class="params">(TreeNode* t1, TreeNode* t2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> t2-&gt;count &lt; t1-&gt;count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">priority_queue&lt;TreeNode*, <span class="built_in">vector</span>&lt;TreeNode*&gt;, CustomCompare&gt; pri;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> ele : m) &#123;</span><br><span class="line">    <span class="keyword">char</span> s;</span><br><span class="line">    TreeNode* node = <span class="keyword">new</span> TreeNode;</span><br><span class="line">    node-&gt;count = ele.second;</span><br><span class="line">    node-&gt;chr = ele.first;</span><br><span class="line">    node-&gt;left = <span class="literal">nullptr</span>;</span><br><span class="line">    node-&gt;right = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; node-&gt;chr &lt;&lt; <span class="string">" "</span> &lt;&lt; node-&gt;count &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    pri.push(node);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>构造霍夫曼树</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (pri.size() &gt; <span class="number">1</span>) &#123;</span><br><span class="line">    TreeNode* p1 = pri.top();</span><br><span class="line">    pri.pop();</span><br><span class="line">    TreeNode* p2 = pri.top();</span><br><span class="line">    pri.pop();</span><br><span class="line">    <span class="keyword">char</span> s = <span class="string">'-'</span>;</span><br><span class="line">    TreeNode* node = <span class="keyword">new</span> TreeNode;</span><br><span class="line">    node-&gt;count = p1-&gt;count + p2-&gt;count;</span><br><span class="line">    node-&gt;chr = s;</span><br><span class="line">    node-&gt;left = p1;</span><br><span class="line">    node-&gt;right = p2;</span><br><span class="line">    pri.push(node);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用dfs对整颗树进行遍历，规定向左遍历<code>str + &quot;0&quot;</code>， 向右遍历<code>str + &quot;1&quot;</code>。当节点没有左孩子（叶子结点）的时候我们将节点的字符和压缩表示<code>str</code>加入map中。这个res中存储的就是每个节点的压缩表示。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode* root, <span class="built_in">string</span> s, <span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="built_in">string</span>&gt;&amp; m)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root-&gt;left == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">        m[root-&gt;chr] = s;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        dfs(root-&gt;left, s + <span class="string">"0"</span>, m);</span><br><span class="line">        dfs(root-&gt;right, s + <span class="string">"1"</span>, m);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">TreeNode* root = pri.top();</span><br><span class="line"><span class="built_in">string</span> str = <span class="string">""</span>;</span><br><span class="line"><span class="built_in">map</span>&lt;<span class="keyword">char</span>, <span class="built_in">string</span>&gt; res;</span><br><span class="line">dfs(root, str, res);</span><br><span class="line"><span class="keyword">return</span> res;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p>2.</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">suikammd</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://suikammd.github.io/2019/04/27/interview-content/">https://suikammd.github.io/2019/04/27/interview-content/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/面试/">面试</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2019/04/27/aarch64-cross-compile/"><i class="fa fa-chevron-left">  </i><span>aarch64 交叉编译</span></a></div><div class="next-post pull-right"><a href="/2019/04/24/petalinux_build_based_on_xilinx_zcu104/"><span>基于Xilinx zcu104版的petalinux移植linux（ffmpeg）</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = 'https://suikammd.github.io/2019/04/27/interview-content/';
+  this.page.identifier = '2019/04/27/interview-content/';
+  this.page.title = '面试内容整理';
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'suikammd' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://suikammd.disqus.com/count.js" async></script></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2020 By suikammd</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>
