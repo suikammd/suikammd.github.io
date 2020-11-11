@@ -98,7 +98,7 @@
 <p> <code>rm &lt;path/to/PetaLinux/project&gt;/project-spec/meta-user/recipes-modules/xilinx-axidma/files/xilinx-axidma.c</code></p>
 <p>（3） 修改<code>&lt;path/to/PetaLinux/project&gt;/project-spec/meta-user/recipes-modules/xilinx-axidma/files/Makefile</code></p>
 <p>删除Makefile第一行，取代为下面三行代码</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">DRIVER_NAME = xilinx-axidma</span><br><span class="line"><span class="meta">$</span>(DRIVER_NAME)-objs = axi_dma.o axidma_chrdev.o axidma_dma.o axidma_of.o</span><br><span class="line">obj-m := $(DRIVER_NAME).o</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">DRIVER_NAME = xilinx-axidma</span><br><span class="line"><span class="meta">$</span><span class="bash">(DRIVER_NAME)-objs = axi_dma.o axidma_chrdev.o axidma_dma.o axidma_of.o</span></span><br><span class="line">obj-m := $(DRIVER_NAME).o</span><br></pre></td></tr></table></figure>
 <p> （4） 修改<code>&lt;path/to/PetaLinux/project&gt;/project-spec/meta-user/recipes-modules/xilinx-axidma/xilinx-axidma.bb</code></p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">SRC_URI = "file://Makefile \ </span><br><span class="line">           file://axi_dma.c \</span><br><span class="line">           file://axidma_chrdev.c \</span><br><span class="line">           file://axidma_dma.c \</span><br><span class="line">           file://axidma_of.c \</span><br><span class="line">           file://axidma.h \</span><br><span class="line">           file://axidma_ioctl.h \</span><br><span class="line">           file://COPYING \</span><br><span class="line">          "</span><br></pre></td></tr></table></figure>
 </li>
