@@ -3,11 +3,11 @@
   <title>Suikammd&#39;s Blog</title>
   
   
-  <link href="https://www.suikammd.com/zh-Hans/atom.xml" rel="self"/>
+  <link href="https://suikammd.github.io/zh-Hans/atom.xml" rel="self"/>
   
-  <link href="https://www.suikammd.com/zh-Hans/"/>
+  <link href="https://suikammd.github.io/zh-Hans/"/>
   <updated>2026-11-19T12:58:15.313Z</updated>
-  <id>https://www.suikammd.com/zh-Hans/</id>
+  <id>https://suikammd.github.io/zh-Hans/</id>
   
   <author>
     <name>suikammd</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Rust perf cpu 和内存</title>
-    <link href="https://www.suikammd.com/zh-Hans/2022/12/06/rust_perf_cpu_and_memory/"/>
-    <id>https://www.suikammd.com/zh-Hans/2022/12/06/rust_perf_cpu_and_memory/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2022/12/06/rust_perf_cpu_and_memory/"/>
+    <id>https://suikammd.github.io/zh-Hans/2022/12/06/rust_perf_cpu_and_memory/</id>
     <published>2022-12-06T15:53:53.000Z</published>
     <updated>2026-11-19T12:58:15.313Z</updated>
     
@@ -40,14 +40,14 @@
     
     
     
-    <category term="rust" scheme="https://www.suikammd.com/zh-Hans/tags/rust/"/>
+    <category term="rust" scheme="https://suikammd.github.io/zh-Hans/tags/rust/"/>
     
   </entry>
   
   <entry>
     <title>Rust HTTP 框架设计-以Axum 0.6为例</title>
-    <link href="https://www.suikammd.com/zh-Hans/2022/12/09/rust_http_framework_design_axum/"/>
-    <id>https://www.suikammd.com/zh-Hans/2022/12/09/rust_http_framework_design_axum/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2022/12/09/rust_http_framework_design_axum/"/>
+    <id>https://suikammd.github.io/zh-Hans/2022/12/09/rust_http_framework_design_axum/</id>
     <published>2022-12-04T16:00:00.000Z</published>
     <updated>2026-11-19T12:58:15.313Z</updated>
     
@@ -61,14 +61,14 @@
     
     
     
-    <category term="rust" scheme="https://www.suikammd.com/zh-Hans/tags/rust/"/>
+    <category term="rust" scheme="https://suikammd.github.io/zh-Hans/tags/rust/"/>
     
   </entry>
   
   <entry>
     <title>实现一个简单的 channel &amp; 介绍下 tokio channel 的实现</title>
-    <link href="https://www.suikammd.com/zh-Hans/2021/11/20/rust-simple-channel/"/>
-    <id>https://www.suikammd.com/zh-Hans/2021/11/20/rust-simple-channel/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2021/11/20/rust-simple-channel/"/>
+    <id>https://suikammd.github.io/zh-Hans/2021/11/20/rust-simple-channel/</id>
     <published>2021-11-20T08:12:23.000Z</published>
     <updated>2026-11-19T12:58:15.313Z</updated>
     
@@ -81,14 +81,14 @@
     
     
     
-    <category term="rust" scheme="https://www.suikammd.com/zh-Hans/tags/rust/"/>
+    <category term="rust" scheme="https://suikammd.github.io/zh-Hans/tags/rust/"/>
     
   </entry>
   
   <entry>
     <title>实现一个简单的 rust executor</title>
-    <link href="https://www.suikammd.com/zh-Hans/2021/09/28/simple-executor/"/>
-    <id>https://www.suikammd.com/zh-Hans/2021/09/28/simple-executor/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2021/09/28/simple-executor/"/>
+    <id>https://suikammd.github.io/zh-Hans/2021/09/28/simple-executor/</id>
     <published>2021-09-28T13:35:33.000Z</published>
     <updated>2026-11-19T12:58:15.314Z</updated>
     
@@ -105,14 +105,14 @@
     
     
     
-    <category term="rust" scheme="https://www.suikammd.com/zh-Hans/tags/rust/"/>
+    <category term="rust" scheme="https://suikammd.github.io/zh-Hans/tags/rust/"/>
     
   </entry>
   
   <entry>
     <title>记一次有趣的查bug之旅</title>
-    <link href="https://www.suikammd.com/zh-Hans/2021/09/22/record-a-weird-bug-fix-travel/"/>
-    <id>https://www.suikammd.com/zh-Hans/2021/09/22/record-a-weird-bug-fix-travel/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2021/09/22/record-a-weird-bug-fix-travel/"/>
+    <id>https://suikammd.github.io/zh-Hans/2021/09/22/record-a-weird-bug-fix-travel/</id>
     <published>2021-09-21T16:43:00.000Z</published>
     <updated>2026-11-19T12:58:15.312Z</updated>
     
@@ -125,18 +125,18 @@
     
     
     
-    <category term="rust" scheme="https://www.suikammd.com/zh-Hans/tags/rust/"/>
+    <category term="rust" scheme="https://suikammd.github.io/zh-Hans/tags/rust/"/>
     
   </entry>
   
   <entry>
     <title>使用rust实现sock5代理</title>
-    <link href="https://www.suikammd.com/zh-Hans/2021/09/11/rust-proxy/"/>
-    <id>https://www.suikammd.com/zh-Hans/2021/09/11/rust-proxy/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2021/09/11/rust-proxy/"/>
+    <id>https://suikammd.github.io/zh-Hans/2021/09/11/rust-proxy/</id>
     <published>2021-09-11T15:53:53.000Z</published>
-    <updated>2026-11-19T12:58:15.313Z</updated>
+    <updated>2026-11-19T13:04:46.187Z</updated>
     
-    <content type="html"><![CDATA[<p>熟悉一门语言的第一步可能是用它写个代理吧。看了很久 rust 的语法，工作上派不上啥用场，只能自己制造需求了，希望以后能找份写 rust 的工作，或者可以自由学东西的工作。</p><h2 id="这个代理有什么特点？"><a href="#这个代理有什么特点？" class="headerlink" title="这个代理有什么特点？"></a>这个代理有什么特点？</h2><ul><li>基于 rust</li></ul><p>主要目的是练习写 rust ，另外 rust 安全高效</p><ul><li>基于 tls websocket</li></ul><p>过神秘的墙需要加密连接，否则容易毙掉。常见的做法类似 shadowsocks ，自定义加密协议，但是这种比较麻烦，偷懒直接使用 TLS websocket 来做这件事</p><ul><li>池化 websocket 连接</li></ul><p>池化连接的好处不容多说，少了建立连接的时间，代理速度更快</p><p>代理大体流程是这样的：</p><p><img src="https://i.imgur.com/jlSE51Z.png" alt="rust-proxy-pipeline"></p><p>代码地址：<a href="https://github.com/suikammd/rust-proxy">https://github.com/suikammd/rust-proxy</a></p><span id="more"></span><h2 id="前置准备"><a href="#前置准备" class="headerlink" title="前置准备"></a>前置准备</h2><p>（不是必须）</p><h2 id="client端整体流程"><a href="#client端整体流程" class="headerlink" title="client端整体流程"></a>client端整体流程</h2><p><img src="https://i.imgur.com/oqe5bDA.png" alt="proxy-client"></p><h2 id="代码设计"><a href="#代码设计" class="headerlink" title="代码设计"></a>代码设计</h2><p>浏览器和 client 建立的连接是普通的 sock5 连接，server 和浏览器想要访问的目的地是普通的 Tcp 连接，但是 client 和 server 之间是池化的 WebSocket 连接。因为我们需要做的事情主要有 4 件：</p><p>（1）解析 sock5 协议，拿到浏览器想要访问的目的地址 </p><p>（2）自定义数据包，同一个 WebSocket 连接会对应多个浏览器到 client 的 socks5 连接，因此在新的 sock5 连接建立的时候，需要让 server 知道浏览器想要访问的地址（ Connect 包），在 sock5 连接断开的时候，需要发送结束包（ Close 包），让 server 重新返回等待 Connect 包的状态 </p><p>（3）池化 WebSocket 连接，涉及到如何实现一个通用的连接池 </p><p>（4）tokio 提供了双向拷贝方法，需要数据结构实现 AsyncRead + AsyncWrite trait，由于 <a href="https://github.com/snapview/tokio-tungstenite">tokio_tungstenite</a> 定义的 WebSocketStream 并没有实现这两个 trait，所以还需要实现下这两个 trait</p><h3 id="解析-socks5-协议"><a href="#解析-socks5-协议" class="headerlink" title="解析 socks5 协议"></a>解析 socks5 协议</h3><ul><li>浏览器与 client 确认协议版本及认证方式</li></ul><table><thead><tr><th>VER</th><th>NMETHODS</th><th>METHODS</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>1-255</td></tr></tbody></table><p>VER：SOCKS 版本，这里是 0x05</p><p>NMETHODS：METHODS 的数量</p><p>METHODS：客户端支持的认证方式</p><ul><li>client 会从浏览器指定的认证方法中选择一个方法回复</li></ul><table><thead><tr><th align="center">VER</th><th align="center">METHOD</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">1</td></tr></tbody></table><p>METHOD：client 选择的认证方式</p><p>目前本文采用了 0x00（即不需要认证）</p><ul><li>浏览器发送请求消息，告诉 client 其希望访问的地址</li></ul><table><thead><tr><th align="center">VER</th><th align="center">CMD</th><th align="center">RSV</th><th align="center">ATYP</th><th align="center">DST.ADDR</th><th align="center">DST.PORT</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">1</td><td align="center">0x00</td><td align="center">1</td><td align="center">动态</td><td align="center">2</td></tr></tbody></table><p>CMD：SOCKS 命令码，0x01（ Connect 请求）、0x02（ BIND 请求）、0x03（ UDP 转发）</p><p>RSV：保留字符 0x00</p><p>ATYP：DST.ADDR类型，0x01（IPv4）、0x03（域名）、0x04（IPv6）</p><p>DST.ADDR：目的地址</p><p>DST.PORT：目的端口</p><ul><li>client 在请求完浏览器想要访问的地址后，会将结果返回给浏览器</li></ul><table><thead><tr><th>VER</th><th>REP</th><th>RSV</th><th>ATYP</th><th>BND.ADDR</th><th>BND.PORT</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>0x00</td><td>1</td><td>动态</td><td>2</td></tr></tbody></table><p> 内容几乎同浏览器的请求包</p><h3 id="自定义包结构"><a href="#自定义包结构" class="headerlink" title="自定义包结构"></a>自定义包结构</h3><p>从 client 到 server 的数据包有三种类型，Connect 包（告诉 server 浏览器想要访问的目的地址）、Data 包（浏览器请求数据）、Close 包（ socks5 连接断开&#x2F;结束），如下所示。</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">enum</span> <span class="title class_">Packet</span> &#123;</span><br><span class="line">    <span class="title function_ invoke__">Connect</span>(Addr),</span><br><span class="line">    <span class="title function_ invoke__">Data</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="title function_ invoke__">Close</span>(),</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">enum</span> <span class="title class_">Addr</span> &#123;</span><br><span class="line">    <span class="title function_ invoke__">IpV4</span>(([<span class="type">u8</span>; <span class="number">4</span>], <span class="type">u16</span>)),</span><br><span class="line">    <span class="title function_ invoke__">Domain</span>((<span class="type">String</span>, <span class="type">u16</span>)),</span><br><span class="line">    <span class="title function_ invoke__">IpV6</span>(([<span class="type">u8</span>; <span class="number">16</span>], <span class="type">u16</span>)),</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>顺便一提，本仓库是基于 <a href="https://github.com/snapview/tokio-tungstenite">tokio_tungstenite</a> 这个 websocket 库实现的。这个库在设计上有很多不合理的地方，比如没有办法做 buffer 复用，可以看以下代码，当我构造一个 Binary 包的时候，我需要传 Vec 进去，即使传别的包也会通过 <code>bin.into()</code> 转换成 Vec，相当于又做了次拷贝，不如直接传 Vec 进去。如果之后优化代理，会考虑重写这个 websocket 库</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">enum</span> <span class="title class_">Message</span> &#123;</span><br><span class="line">    <span class="comment">/// A text WebSocket message</span></span><br><span class="line">    <span class="title function_ invoke__">Text</span>(<span class="type">String</span>),</span><br><span class="line">    <span class="comment">/// A binary WebSocket message</span></span><br><span class="line">    <span class="title function_ invoke__">Binary</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="comment">/// A ping message with the specified payload</span></span><br><span class="line">    <span class="comment">///</span></span><br><span class="line">    <span class="comment">/// The payload here must have a length less than 125 bytes</span></span><br><span class="line">    <span class="title function_ invoke__">Ping</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="comment">/// A pong message with the specified payload</span></span><br><span class="line">    <span class="comment">///</span></span><br><span class="line">    <span class="comment">/// The payload here must have a length less than 125 bytes</span></span><br><span class="line">    <span class="title function_ invoke__">Pong</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="comment">/// A close message with the optional close frame.</span></span><br><span class="line">    <span class="title function_ invoke__">Close</span>(<span class="type">Option</span>&lt;CloseFrame&lt;<span class="symbol">&#x27;static</span>&gt;&gt;),</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">impl</span> <span class="title class_">Message</span> &#123;</span><br><span class="line">    <span class="comment">/// Create a new binary WebSocket message by converting to Vec&lt;u8&gt;.</span></span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">binary</span>&lt;B&gt;(bin: B) <span class="punctuation">-&gt;</span> Message</span><br><span class="line">    <span class="keyword">where</span></span><br><span class="line">        B: <span class="built_in">Into</span>&lt;<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;&gt;,</span><br><span class="line">    &#123;</span><br><span class="line">        Message::<span class="title function_ invoke__">Binary</span>(bin.<span class="title function_ invoke__">into</span>())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="连接池实现"><a href="#连接池实现" class="headerlink" title="连接池实现"></a>连接池实现</h3><p>顾名思义，连接池就是池子里放着一大堆已经建立好的连接，在代理这个场景下（对端固定）连接池的作用毋庸置疑。那么我们这个连接池需要实现哪些功能呢？一言以蔽之，就是从池子里拿连接，将连接放回池子。但是为了让连接池足够快速，在从池子里拿连接的时候可以做这样的优化：如果池子里没有 idle 的连接，可以在池子里放一个 waiter（这里其实是 channel 的发送端），如果有人用完了连接，可以直接把连接给塞给这个 waiter，同时也去创建新的连接，然后通过 <code>future::select</code> 同时等待 waiter 拿到数据或者新连接创建完。</p><p>这时候我们可以总结出来 pool 的定义，可以是这样的：</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">Pool</span>&lt;T&gt; &#123;</span><br><span class="line">    inner: Arc&lt;Mutex&lt;Inner&lt;T&gt;&gt;&gt;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">Inner</span>&lt;T&gt; &#123;</span><br><span class="line">    idle: <span class="type">Vec</span>&lt;T&gt;,</span><br><span class="line">    waiters: VecDeque&lt;oneshot::Sender&lt;T&gt;&gt;,</span><br><span class="line">    max_idle: <span class="type">usize</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>idle 是空闲连接，waiters 是向池子拿连接时放入的 waiter ，max_idle 是最大空闲连接数</p><p>（1）这个pool需要做哪些事情</p><ul><li><p>管理空闲连接：其实就是一个vec</p></li><li><p>从pool里拿出来一个连接</p></li></ul><p>分为两种情况</p><p>（1）idle 有空闲连接，直接 pop idle 里的空闲连接</p><p>（2）向 waiters 丢一个新的 waiter，同时通过 get 方法传进来的 make_service 创建一个新的连接。这时候使用 <code>future::select</code> 同时等待有人将用完的连接丢给 waiter ，或者新的连接先创建完。这里还做了个比较有趣的优化，如果有人先将用完的连接丢给 waiter ，新的连接创建的一半岂不是很浪费，没关系，这里我们可以通过 <code>tokio::spwan</code> 出继续完成新连接的创建，再将新创建的连接放到 idle 里</p><p>返回的数据结构是这样定义的，一个是连接本身，一个是指向 pool 的弱引用。为什么 inner 需要时 Option 呢？这是因为这样可以比较方便的将连接 take 出来，也不至于触发 <code>Pooled</code> 的析构，用完了可以再 insert 进去。那为什么需要持有 pool 的弱引用呢？因为需要知道放回连接到哪个池子里</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">Pooled</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">pub</span> inner: <span class="type">Option</span>&lt;T&gt;,</span><br><span class="line">    pool: Weak&lt;Mutex&lt;Inner&lt;T&gt;&gt;&gt;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>看到这里，你可能就会想到，连接是如何放回池子里的了</p><ul><li>将连接放回pool</li></ul><p>当连接用完的时候，我们并不会关闭连接，而是通过它的析构函数，将连接放回池子里。所以我们可以为 <code>Pooled</code> 实现 <code>Drop</code> trait ，在 drop 里调用 pool 的 put 方法真正将连接放回池子里</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span>&lt;T&gt; <span class="built_in">Drop</span> <span class="keyword">for</span> <span class="title class_">Pooled</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">drop</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">self</span>.inner.<span class="title function_ invoke__">is_none</span>() &#123;</span><br><span class="line">            info!(<span class="string">&quot;inner drop is not some?&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">t</span> = <span class="keyword">self</span>.inner.<span class="title function_ invoke__">take</span>().<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> <span class="variable">Some</span>(pool) = <span class="keyword">self</span>.pool.<span class="title function_ invoke__">upgrade</span>() &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> <span class="variable">Ok</span>(<span class="keyword">mut</span> pool) = pool.<span class="title function_ invoke__">lock</span>() &#123;</span><br><span class="line">                pool.<span class="title function_ invoke__">put</span>(t);</span><br><span class="line">                info!(<span class="string">&quot;successfully put ws stream back to pool&quot;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>从拿连接的逻辑我们就知道将连接放回池子应该做哪些事情了。先看有没有 waiter ，如果有 waiter ，直接将连接丢给 waiter，如果没有 waiter ，将连接放回 idle</p><ul><li>感知连接的状态</li></ul><p>如果pool中的连接自己挂了，没有及时感知到，client拿到了挂的连接，那用户使用体验会很糟糕呀。因此还需要周期性的检查pool中连接的状态，所以这里我们需要定义一个Poolable，如果不是reuseable的，就从pool中移除掉这个连接</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">trait</span> <span class="title class_">Poolable</span> &#123;</span><br><span class="line">    <span class="comment">// check if the connection is opened</span></span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">reuseable</span>(&amp;<span class="keyword">self</span>) <span class="punctuation">-&gt;</span> <span class="type">bool</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>当然其实这个是比较通用的实现，在本代码中并没能做这件事情。因为底层无法感知连接的状态，还是需要上层主动探活，这个逻辑还没实现。</p><h3 id="为-WebSocketStream-实现-AsyncRead-AsyncWrite"><a href="#为-WebSocketStream-实现-AsyncRead-AsyncWrite" class="headerlink" title="为 WebSocketStream 实现 AsyncRead + AsyncWrite"></a>为 WebSocketStream 实现 AsyncRead + AsyncWrite</h3><p><a href="https://github.com/snapview/tokio-tungstenite">tokio_tungstenite</a> 设计上有很多让我感到奇怪的地方，在 client 端，不论你想建立的是 TLS 连接还是非 TLS 连接，拿到的都是 <code>WebSocketStream&lt;MaybeTlsStream&lt;TcpStream&gt;&gt;</code> ，server 拿到的都是 <code>WebSocketStream&lt;TlsStream&lt;TcpStream&gt;&gt;</code>，不过还好 MaybeTlsStream 和 TlsStream 都实现了 AysncRead 和 AsyncWrite，而不是分别为 client、server 的连接分别实现一次</p><p>对于 AsyncRead ，我们需要实现 poll_read 方法</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">trait</span> <span class="title class_">AsyncRead</span> &#123;</span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_read</span>(</span><br><span class="line">        <span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;,</span><br><span class="line">        cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;,</span><br><span class="line">        buf: &amp;<span class="keyword">mut</span> ReadBuf&lt;<span class="symbol">&#x27;_</span>&gt;,</span><br><span class="line">    ) <span class="punctuation">-&gt;</span> Poll&lt;io::<span class="type">Result</span>&lt;()&gt;&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>对于 AsyncWrite ，我们需要实现 poll_write poll_flush poll_shutdown</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">trait</span> <span class="title class_">AsyncWrite</span> &#123;</span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_write</span>(</span><br><span class="line">        <span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;,</span><br><span class="line">        cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;,</span><br><span class="line">        buf: &amp;[<span class="type">u8</span>],</span><br><span class="line">    ) <span class="punctuation">-&gt;</span> Poll&lt;<span class="type">Result</span>&lt;<span class="type">usize</span>, io::Error&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_flush</span>(<span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;, cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;) <span class="punctuation">-&gt;</span> Poll&lt;<span class="type">Result</span>&lt;(), io::Error&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_shutdown</span>(<span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;, cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;) <span class="punctuation">-&gt;</span> Poll&lt;<span class="type">Result</span>&lt;(), io::Error&gt;&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>有两点需要注意，在 copy_bidirectional 完成的时候，会执行 poll_shutdown ，由于我们需要复用底层连接，所以我们不应该真的关闭连接，而是发送 Close 包（告诉对端这次承载的 socks5 连接结束了，可以接受新的 socks 连接了），返回 <code>Poll::Ready(Ok(()))</code>。令一点是 poll_write 返回的 usize 长度不应该超过 buf 的长度（具体原因见另一篇文档 <a href="https://suikammd.com/zh-Hans/2021/09/22/record-a-weird-bug-fix-travel/">记一次有趣的查bug之旅 </a>）</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>使用 rust 写一个能够 work 的代理还是很容易的，但是让它足够鲁棒还是很难的，有很多细节需要考虑，特别是在连接异常情况下的错误处理。接下来还想做的事情是避免连接池中存在死的连接，一个是需要主动探活连接，一个是需要做 client 端重试（底层连接异常，触发上层有限次数重试）</p>]]></content>
+    <content type="html"><![CDATA[<p>熟悉一门语言的第一步可能是用它写个代理吧。看了很久 rust 的语法，工作上派不上啥用场，只能自己制造需求了，希望以后能找份写 rust 的工作，或者可以自由学东西的工作。</p><h2 id="这个代理有什么特点？"><a href="#这个代理有什么特点？" class="headerlink" title="这个代理有什么特点？"></a>这个代理有什么特点？</h2><ul><li>基于 rust</li></ul><p>主要目的是练习写 rust ，另外 rust 安全高效</p><ul><li>基于 tls websocket</li></ul><p>过神秘的墙需要加密连接，否则容易毙掉。常见的做法类似 shadowsocks ，自定义加密协议，但是这种比较麻烦，偷懒直接使用 TLS websocket 来做这件事</p><ul><li>池化 websocket 连接</li></ul><p>池化连接的好处不容多说，少了建立连接的时间，代理速度更快</p><p>代理大体流程是这样的：</p><p><img src="https://i.imgur.com/jlSE51Z.png" alt="rust-proxy-pipeline"></p><p>代码地址：<a href="https://github.com/suikammd/rust-proxy">https://github.com/suikammd/rust-proxy</a></p><span id="more"></span><h2 id="前置准备"><a href="#前置准备" class="headerlink" title="前置准备"></a>前置准备</h2><p>（不是必须）</p><h2 id="client端整体流程"><a href="#client端整体流程" class="headerlink" title="client端整体流程"></a>client端整体流程</h2><p><img src="https://i.imgur.com/oqe5bDA.png" alt="proxy-client"></p><h2 id="代码设计"><a href="#代码设计" class="headerlink" title="代码设计"></a>代码设计</h2><p>浏览器和 client 建立的连接是普通的 sock5 连接，server 和浏览器想要访问的目的地是普通的 Tcp 连接，但是 client 和 server 之间是池化的 WebSocket 连接。因为我们需要做的事情主要有 4 件：</p><p>（1）解析 sock5 协议，拿到浏览器想要访问的目的地址 </p><p>（2）自定义数据包，同一个 WebSocket 连接会对应多个浏览器到 client 的 socks5 连接，因此在新的 sock5 连接建立的时候，需要让 server 知道浏览器想要访问的地址（ Connect 包），在 sock5 连接断开的时候，需要发送结束包（ Close 包），让 server 重新返回等待 Connect 包的状态 </p><p>（3）池化 WebSocket 连接，涉及到如何实现一个通用的连接池 </p><p>（4）tokio 提供了双向拷贝方法，需要数据结构实现 AsyncRead + AsyncWrite trait，由于 <a href="https://github.com/snapview/tokio-tungstenite">tokio_tungstenite</a> 定义的 WebSocketStream 并没有实现这两个 trait，所以还需要实现下这两个 trait</p><h3 id="解析-socks5-协议"><a href="#解析-socks5-协议" class="headerlink" title="解析 socks5 协议"></a>解析 socks5 协议</h3><ul><li>浏览器与 client 确认协议版本及认证方式</li></ul><table><thead><tr><th>VER</th><th>NMETHODS</th><th>METHODS</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>1-255</td></tr></tbody></table><p>VER：SOCKS 版本，这里是 0x05</p><p>NMETHODS：METHODS 的数量</p><p>METHODS：客户端支持的认证方式</p><ul><li>client 会从浏览器指定的认证方法中选择一个方法回复</li></ul><table><thead><tr><th align="center">VER</th><th align="center">METHOD</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">1</td></tr></tbody></table><p>METHOD：client 选择的认证方式</p><p>目前本文采用了 0x00（即不需要认证）</p><ul><li>浏览器发送请求消息，告诉 client 其希望访问的地址</li></ul><table><thead><tr><th align="center">VER</th><th align="center">CMD</th><th align="center">RSV</th><th align="center">ATYP</th><th align="center">DST.ADDR</th><th align="center">DST.PORT</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">1</td><td align="center">0x00</td><td align="center">1</td><td align="center">动态</td><td align="center">2</td></tr></tbody></table><p>CMD：SOCKS 命令码，0x01（ Connect 请求）、0x02（ BIND 请求）、0x03（ UDP 转发）</p><p>RSV：保留字符 0x00</p><p>ATYP：DST.ADDR类型，0x01（IPv4）、0x03（域名）、0x04（IPv6）</p><p>DST.ADDR：目的地址</p><p>DST.PORT：目的端口</p><ul><li>client 在请求完浏览器想要访问的地址后，会将结果返回给浏览器</li></ul><table><thead><tr><th>VER</th><th>REP</th><th>RSV</th><th>ATYP</th><th>BND.ADDR</th><th>BND.PORT</th></tr></thead><tbody><tr><td>1</td><td>1</td><td>0x00</td><td>1</td><td>动态</td><td>2</td></tr></tbody></table><p> 内容几乎同浏览器的请求包</p><h3 id="自定义包结构"><a href="#自定义包结构" class="headerlink" title="自定义包结构"></a>自定义包结构</h3><p>从 client 到 server 的数据包有三种类型，Connect 包（告诉 server 浏览器想要访问的目的地址）、Data 包（浏览器请求数据）、Close 包（ socks5 连接断开&#x2F;结束），如下所示。</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">enum</span> <span class="title class_">Packet</span> &#123;</span><br><span class="line">    <span class="title function_ invoke__">Connect</span>(Addr),</span><br><span class="line">    <span class="title function_ invoke__">Data</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="title function_ invoke__">Close</span>(),</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">enum</span> <span class="title class_">Addr</span> &#123;</span><br><span class="line">    <span class="title function_ invoke__">IpV4</span>(([<span class="type">u8</span>; <span class="number">4</span>], <span class="type">u16</span>)),</span><br><span class="line">    <span class="title function_ invoke__">Domain</span>((<span class="type">String</span>, <span class="type">u16</span>)),</span><br><span class="line">    <span class="title function_ invoke__">IpV6</span>(([<span class="type">u8</span>; <span class="number">16</span>], <span class="type">u16</span>)),</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>顺便一提，本仓库是基于 <a href="https://github.com/snapview/tokio-tungstenite">tokio_tungstenite</a> 这个 websocket 库实现的。这个库在设计上有很多不合理的地方，比如没有办法做 buffer 复用，可以看以下代码，当我构造一个 Binary 包的时候，我需要传 Vec 进去，即使传别的包也会通过 <code>bin.into()</code> 转换成 Vec，相当于又做了次拷贝，不如直接传 Vec 进去。如果之后优化代理，会考虑重写这个 websocket 库</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">enum</span> <span class="title class_">Message</span> &#123;</span><br><span class="line">    <span class="comment">/// A text WebSocket message</span></span><br><span class="line">    <span class="title function_ invoke__">Text</span>(<span class="type">String</span>),</span><br><span class="line">    <span class="comment">/// A binary WebSocket message</span></span><br><span class="line">    <span class="title function_ invoke__">Binary</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="comment">/// A ping message with the specified payload</span></span><br><span class="line">    <span class="comment">///</span></span><br><span class="line">    <span class="comment">/// The payload here must have a length less than 125 bytes</span></span><br><span class="line">    <span class="title function_ invoke__">Ping</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="comment">/// A pong message with the specified payload</span></span><br><span class="line">    <span class="comment">///</span></span><br><span class="line">    <span class="comment">/// The payload here must have a length less than 125 bytes</span></span><br><span class="line">    <span class="title function_ invoke__">Pong</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="comment">/// A close message with the optional close frame.</span></span><br><span class="line">    <span class="title function_ invoke__">Close</span>(<span class="type">Option</span>&lt;CloseFrame&lt;<span class="symbol">&#x27;static</span>&gt;&gt;),</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">impl</span> <span class="title class_">Message</span> &#123;</span><br><span class="line">    <span class="comment">/// Create a new binary WebSocket message by converting to Vec&lt;u8&gt;.</span></span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">binary</span>&lt;B&gt;(bin: B) <span class="punctuation">-&gt;</span> Message</span><br><span class="line">    <span class="keyword">where</span></span><br><span class="line">        B: <span class="built_in">Into</span>&lt;<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;&gt;,</span><br><span class="line">    &#123;</span><br><span class="line">        Message::<span class="title function_ invoke__">Binary</span>(bin.<span class="title function_ invoke__">into</span>())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="连接池实现"><a href="#连接池实现" class="headerlink" title="连接池实现"></a>连接池实现</h3><p>顾名思义，连接池就是池子里放着一大堆已经建立好的连接，在代理这个场景下（对端固定）连接池的作用毋庸置疑。那么我们这个连接池需要实现哪些功能呢？一言以蔽之，就是从池子里拿连接，将连接放回池子。但是为了让连接池足够快速，在从池子里拿连接的时候可以做这样的优化：如果池子里没有 idle 的连接，可以在池子里放一个 waiter（这里其实是 channel 的发送端），如果有人用完了连接，可以直接把连接给塞给这个 waiter，同时也去创建新的连接，然后通过 <code>future::select</code> 同时等待 waiter 拿到数据或者新连接创建完。</p><p>这时候我们可以总结出来 pool 的定义，可以是这样的：</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">Pool</span>&lt;T&gt; &#123;</span><br><span class="line">    inner: Arc&lt;Mutex&lt;Inner&lt;T&gt;&gt;&gt;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">Inner</span>&lt;T&gt; &#123;</span><br><span class="line">    idle: <span class="type">Vec</span>&lt;T&gt;,</span><br><span class="line">    waiters: VecDeque&lt;oneshot::Sender&lt;T&gt;&gt;,</span><br><span class="line">    max_idle: <span class="type">usize</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>idle 是空闲连接，waiters 是向池子拿连接时放入的 waiter ，max_idle 是最大空闲连接数</p><p>（1）这个pool需要做哪些事情</p><ul><li><p>管理空闲连接：其实就是一个vec</p></li><li><p>从pool里拿出来一个连接</p></li></ul><p>分为两种情况</p><p>（1）idle 有空闲连接，直接 pop idle 里的空闲连接</p><p>（2）向 waiters 丢一个新的 waiter，同时通过 get 方法传进来的 make_service 创建一个新的连接。这时候使用 <code>future::select</code> 同时等待有人将用完的连接丢给 waiter ，或者新的连接先创建完。这里还做了个比较有趣的优化，如果有人先将用完的连接丢给 waiter ，新的连接创建的一半岂不是很浪费，没关系，这里我们可以通过 <code>tokio::spwan</code> 出继续完成新连接的创建，再将新创建的连接放到 idle 里</p><p>返回的数据结构是这样定义的，一个是连接本身，一个是指向 pool 的弱引用。为什么 inner 需要时 Option 呢？这是因为这样可以比较方便的将连接 take 出来，也不至于触发 <code>Pooled</code> 的析构，用完了可以再 insert 进去。那为什么需要持有 pool 的弱引用呢？因为需要知道放回连接到哪个池子里</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">Pooled</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">pub</span> inner: <span class="type">Option</span>&lt;T&gt;,</span><br><span class="line">    pool: Weak&lt;Mutex&lt;Inner&lt;T&gt;&gt;&gt;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>看到这里，你可能就会想到，连接是如何放回池子里的了</p><ul><li>将连接放回pool</li></ul><p>当连接用完的时候，我们并不会关闭连接，而是通过它的析构函数，将连接放回池子里。所以我们可以为 <code>Pooled</code> 实现 <code>Drop</code> trait ，在 drop 里调用 pool 的 put 方法真正将连接放回池子里</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span>&lt;T&gt; <span class="built_in">Drop</span> <span class="keyword">for</span> <span class="title class_">Pooled</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">drop</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">self</span>.inner.<span class="title function_ invoke__">is_none</span>() &#123;</span><br><span class="line">            info!(<span class="string">&quot;inner drop is not some?&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">t</span> = <span class="keyword">self</span>.inner.<span class="title function_ invoke__">take</span>().<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> <span class="variable">Some</span>(pool) = <span class="keyword">self</span>.pool.<span class="title function_ invoke__">upgrade</span>() &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> <span class="variable">Ok</span>(<span class="keyword">mut</span> pool) = pool.<span class="title function_ invoke__">lock</span>() &#123;</span><br><span class="line">                pool.<span class="title function_ invoke__">put</span>(t);</span><br><span class="line">                info!(<span class="string">&quot;successfully put ws stream back to pool&quot;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>从拿连接的逻辑我们就知道将连接放回池子应该做哪些事情了。先看有没有 waiter ，如果有 waiter ，直接将连接丢给 waiter，如果没有 waiter ，将连接放回 idle</p><ul><li>感知连接的状态</li></ul><p>如果pool中的连接自己挂了，没有及时感知到，client拿到了挂的连接，那用户使用体验会很糟糕呀。因此还需要周期性的检查pool中连接的状态，所以这里我们需要定义一个Poolable，如果不是reuseable的，就从pool中移除掉这个连接</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">trait</span> <span class="title class_">Poolable</span> &#123;</span><br><span class="line">    <span class="comment">// check if the connection is opened</span></span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">reuseable</span>(&amp;<span class="keyword">self</span>) <span class="punctuation">-&gt;</span> <span class="type">bool</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>当然其实这个是比较通用的实现，在本代码中并没能做这件事情。因为底层无法感知连接的状态，还是需要上层主动探活，这个逻辑还没实现。</p><h3 id="为-WebSocketStream-实现-AsyncRead-AsyncWrite"><a href="#为-WebSocketStream-实现-AsyncRead-AsyncWrite" class="headerlink" title="为 WebSocketStream 实现 AsyncRead + AsyncWrite"></a>为 WebSocketStream 实现 AsyncRead + AsyncWrite</h3><p><a href="https://github.com/snapview/tokio-tungstenite">tokio_tungstenite</a> 设计上有很多让我感到奇怪的地方，在 client 端，不论你想建立的是 TLS 连接还是非 TLS 连接，拿到的都是 <code>WebSocketStream&lt;MaybeTlsStream&lt;TcpStream&gt;&gt;</code> ，server 拿到的都是 <code>WebSocketStream&lt;TlsStream&lt;TcpStream&gt;&gt;</code>，不过还好 MaybeTlsStream 和 TlsStream 都实现了 AysncRead 和 AsyncWrite，而不是分别为 client、server 的连接分别实现一次</p><p>对于 AsyncRead ，我们需要实现 poll_read 方法</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">trait</span> <span class="title class_">AsyncRead</span> &#123;</span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_read</span>(</span><br><span class="line">        <span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;,</span><br><span class="line">        cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;,</span><br><span class="line">        buf: &amp;<span class="keyword">mut</span> ReadBuf&lt;<span class="symbol">&#x27;_</span>&gt;,</span><br><span class="line">    ) <span class="punctuation">-&gt;</span> Poll&lt;io::<span class="type">Result</span>&lt;()&gt;&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>对于 AsyncWrite ，我们需要实现 poll_write poll_flush poll_shutdown</p><figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">trait</span> <span class="title class_">AsyncWrite</span> &#123;</span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_write</span>(</span><br><span class="line">        <span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;,</span><br><span class="line">        cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;,</span><br><span class="line">        buf: &amp;[<span class="type">u8</span>],</span><br><span class="line">    ) <span class="punctuation">-&gt;</span> Poll&lt;<span class="type">Result</span>&lt;<span class="type">usize</span>, io::Error&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_flush</span>(<span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;, cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;) <span class="punctuation">-&gt;</span> Poll&lt;<span class="type">Result</span>&lt;(), io::Error&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_shutdown</span>(<span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;, cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;) <span class="punctuation">-&gt;</span> Poll&lt;<span class="type">Result</span>&lt;(), io::Error&gt;&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>有两点需要注意，在 copy_bidirectional 完成的时候，会执行 poll_shutdown ，由于我们需要复用底层连接，所以我们不应该真的关闭连接，而是发送 Close 包（告诉对端这次承载的 socks5 连接结束了，可以接受新的 socks 连接了），返回 <code>Poll::Ready(Ok(()))</code>。令一点是 poll_write 返回的 usize 长度不应该超过 buf 的长度（具体原因见另一篇文档 <a href="https://suikammd.github.io/zh-Hans/2021/09/22/record-a-weird-bug-fix-travel/">记一次有趣的查bug之旅 </a>）</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>使用 rust 写一个能够 work 的代理还是很容易的，但是让它足够鲁棒还是很难的，有很多细节需要考虑，特别是在连接异常情况下的错误处理。接下来还想做的事情是避免连接池中存在死的连接，一个是需要主动探活连接，一个是需要做 client 端重试（底层连接异常，触发上层有限次数重试）</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;熟悉一门语言的第一步可能是用它写个代理吧。看了很久 rust 的语法，工作上派不上啥用场，只能自己制造需求了，希望以后能找份写 rust 的工作，或者可以自由学东西的工作。&lt;/p&gt;
@@ -159,14 +159,14 @@
     
     
     
-    <category term="rust" scheme="https://www.suikammd.com/zh-Hans/tags/rust/"/>
+    <category term="rust" scheme="https://suikammd.github.io/zh-Hans/tags/rust/"/>
     
   </entry>
   
   <entry>
     <title>2021 bytedance CTF writeup</title>
-    <link href="https://www.suikammd.com/zh-Hans/2021/08/15/2021-bytedance-ctf/"/>
-    <id>https://www.suikammd.com/zh-Hans/2021/08/15/2021-bytedance-ctf/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2021/08/15/2021-bytedance-ctf/"/>
+    <id>https://suikammd.github.io/zh-Hans/2021/08/15/2021-bytedance-ctf/</id>
     <published>2021-08-15T13:35:33.000Z</published>
     <updated>2026-11-19T12:58:15.307Z</updated>
     
@@ -186,14 +186,14 @@
     
     
     
-    <category term="ctf" scheme="https://www.suikammd.com/zh-Hans/tags/ctf/"/>
+    <category term="ctf" scheme="https://suikammd.github.io/zh-Hans/tags/ctf/"/>
     
   </entry>
   
   <entry>
     <title>限流器</title>
-    <link href="https://www.suikammd.com/zh-Hans/2020/12/11/restrictor/"/>
-    <id>https://www.suikammd.com/zh-Hans/2020/12/11/restrictor/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2020/12/11/restrictor/"/>
+    <id>https://suikammd.github.io/zh-Hans/2020/12/11/restrictor/</id>
     <published>2020-12-11T03:06:18.000Z</published>
     <updated>2026-11-19T12:58:15.312Z</updated>
     
@@ -205,14 +205,14 @@
     
     
     
-    <category term="Golang" scheme="https://www.suikammd.com/zh-Hans/tags/Golang/"/>
+    <category term="Golang" scheme="https://suikammd.github.io/zh-Hans/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>理解golang函数传递slice</title>
-    <link href="https://www.suikammd.com/zh-Hans/2020/11/11/golong-slice-function/"/>
-    <id>https://www.suikammd.com/zh-Hans/2020/11/11/golong-slice-function/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2020/11/11/golong-slice-function/"/>
+    <id>https://suikammd.github.io/zh-Hans/2020/11/11/golong-slice-function/</id>
     <published>2020-11-11T07:30:34.000Z</published>
     <updated>2026-11-19T12:58:15.312Z</updated>
     
@@ -226,14 +226,14 @@
     
     
     
-    <category term="Golang" scheme="https://www.suikammd.com/zh-Hans/tags/Golang/"/>
+    <category term="Golang" scheme="https://suikammd.github.io/zh-Hans/tags/Golang/"/>
     
   </entry>
   
   <entry>
     <title>基于antlr的词法和语法分析</title>
-    <link href="https://www.suikammd.com/zh-Hans/2020/10/10/antlr-lexer-parser/"/>
-    <id>https://www.suikammd.com/zh-Hans/2020/10/10/antlr-lexer-parser/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2020/10/10/antlr-lexer-parser/"/>
+    <id>https://suikammd.github.io/zh-Hans/2020/10/10/antlr-lexer-parser/</id>
     <published>2020-10-10T06:08:37.000Z</published>
     <updated>2026-11-19T12:58:15.308Z</updated>
     
@@ -254,14 +254,14 @@
     
     
     
-    <category term="DSL" scheme="https://www.suikammd.com/zh-Hans/tags/DSL/"/>
+    <category term="DSL" scheme="https://suikammd.github.io/zh-Hans/tags/DSL/"/>
     
   </entry>
   
   <entry>
     <title>搭建本地https服务器</title>
-    <link href="https://www.suikammd.com/zh-Hans/2020/10/09/build-local-https-server/"/>
-    <id>https://www.suikammd.com/zh-Hans/2020/10/09/build-local-https-server/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2020/10/09/build-local-https-server/"/>
+    <id>https://suikammd.github.io/zh-Hans/2020/10/09/build-local-https-server/</id>
     <published>2020-10-09T08:01:05.000Z</published>
     <updated>2026-11-19T12:58:15.308Z</updated>
     
@@ -274,14 +274,14 @@
     
     
     
-    <category term="https" scheme="https://www.suikammd.com/zh-Hans/tags/https/"/>
+    <category term="https" scheme="https://suikammd.github.io/zh-Hans/tags/https/"/>
     
   </entry>
   
   <entry>
     <title>使用 树莓派 + HomeKit 来控制空调</title>
-    <link href="https://www.suikammd.com/zh-Hans/2019/08/07/Use-HomeKit-Control-AirConditioner/"/>
-    <id>https://www.suikammd.com/zh-Hans/2019/08/07/Use-HomeKit-Control-AirConditioner/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2019/08/07/Use-HomeKit-Control-AirConditioner/"/>
+    <id>https://suikammd.github.io/zh-Hans/2019/08/07/Use-HomeKit-Control-AirConditioner/</id>
     <published>2019-08-07T03:35:10.000Z</published>
     <updated>2026-11-19T12:58:15.307Z</updated>
     
@@ -298,14 +298,14 @@
     
     
     
-    <category term="HomeKit" scheme="https://www.suikammd.com/zh-Hans/tags/HomeKit/"/>
+    <category term="HomeKit" scheme="https://suikammd.github.io/zh-Hans/tags/HomeKit/"/>
     
   </entry>
   
   <entry>
     <title>AWS-Save-Money</title>
-    <link href="https://www.suikammd.com/zh-Hans/2019/05/29/AWS-Save-Money/"/>
-    <id>https://www.suikammd.com/zh-Hans/2019/05/29/AWS-Save-Money/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2019/05/29/AWS-Save-Money/"/>
+    <id>https://suikammd.github.io/zh-Hans/2019/05/29/AWS-Save-Money/</id>
     <published>2019-05-29T05:33:57.000Z</published>
     <updated>2026-11-19T12:58:15.307Z</updated>
     
@@ -318,14 +318,14 @@
     
     
     
-    <category term="Cloud" scheme="https://www.suikammd.com/zh-Hans/tags/Cloud/"/>
+    <category term="Cloud" scheme="https://suikammd.github.io/zh-Hans/tags/Cloud/"/>
     
   </entry>
   
   <entry>
     <title>Petalinux DMA驱动</title>
-    <link href="https://www.suikammd.com/zh-Hans/2019/05/12/write-linux-dma-driver/"/>
-    <id>https://www.suikammd.com/zh-Hans/2019/05/12/write-linux-dma-driver/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2019/05/12/write-linux-dma-driver/"/>
+    <id>https://suikammd.github.io/zh-Hans/2019/05/12/write-linux-dma-driver/</id>
     <published>2019-05-12T02:28:30.000Z</published>
     <updated>2026-11-19T12:58:15.314Z</updated>
     
@@ -341,14 +341,14 @@
     
     
     
-    <category term="petalinux" scheme="https://www.suikammd.com/zh-Hans/tags/petalinux/"/>
+    <category term="petalinux" scheme="https://suikammd.github.io/zh-Hans/tags/petalinux/"/>
     
   </entry>
   
   <entry>
     <title>aarch64 交叉编译</title>
-    <link href="https://www.suikammd.com/zh-Hans/2019/04/27/aarch64-cross-compile/"/>
-    <id>https://www.suikammd.com/zh-Hans/2019/04/27/aarch64-cross-compile/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2019/04/27/aarch64-cross-compile/"/>
+    <id>https://suikammd.github.io/zh-Hans/2019/04/27/aarch64-cross-compile/</id>
     <published>2019-04-27T13:35:33.000Z</published>
     <updated>2026-11-19T12:58:15.307Z</updated>
     
@@ -363,14 +363,14 @@
     
     
     
-    <category term="petalinux" scheme="https://www.suikammd.com/zh-Hans/tags/petalinux/"/>
+    <category term="petalinux" scheme="https://suikammd.github.io/zh-Hans/tags/petalinux/"/>
     
   </entry>
   
   <entry>
     <title>基于Xilinx zcu104版的petalinux移植linux（ffmpeg）</title>
-    <link href="https://www.suikammd.com/zh-Hans/2019/04/24/petalinux_build_based_on_xilinx_zcu104/"/>
-    <id>https://www.suikammd.com/zh-Hans/2019/04/24/petalinux_build_based_on_xilinx_zcu104/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2019/04/24/petalinux_build_based_on_xilinx_zcu104/"/>
+    <id>https://suikammd.github.io/zh-Hans/2019/04/24/petalinux_build_based_on_xilinx_zcu104/</id>
     <published>2019-04-24T13:24:27.000Z</published>
     <updated>2026-11-19T12:58:15.312Z</updated>
     
@@ -386,33 +386,14 @@
     
     
     
-    <category term="petalinux" scheme="https://www.suikammd.com/zh-Hans/tags/petalinux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>崇明岛一日游</title>
-    <link href="https://www.suikammd.com/zh-Hans/2018/10/12/chongming_island/"/>
-    <id>https://www.suikammd.com/zh-Hans/2018/10/12/chongming_island/</id>
-    <published>2018-10-12T05:01:47.000Z</published>
-    <updated>2026-11-19T12:58:15.308Z</updated>
-    
-    <content type="html"><![CDATA[<p>从金桥出发，租车到达崇明岛。虽然是国庆期间，路上也不怎么堵车，一路都在睡觉。<br>到达崇明岛前经过了一个小岛，阳光很好，在树影交错的路上行驶。路两边有卖橘子、螃蟹等各种特产的小贩。<br><img src="https://i.imgur.com/jiQXXYf.jpg" alt="Imgur"><br><em>超级温馨啊，想想自己岁数大的时候，头发斑白，也能像这两位老人一样幸福</em></p><span id="more"></span><ul><li><p>东滩湿地<br><img src="https://i.imgur.com/rbUpFwU.jpg" alt="Imgur"><br><img src="https://i.imgur.com/kBCYNsW.jpg" alt="Imgur"></p></li><li><p>西沙湿地<br>本来这部分是这篇博客的重点。西沙湿地到处是芦苇，芦苇荡里藏着很多红色的小螃蟹。去年的时候，我们买了肉钓上来一大袋小螃蟹，小螃蟹蠢蠢的闻到肉味就开心的抓着肉怎么都不放开，但是被捉进袋子里之后反而不吃肉了，让人无法理解。后来离开湿地之后，路上摘了一袋子橘子，吃着吃着橘子想着螃蟹被吃掉也很可怜就放了。<br>我们一行6个人到达湿地停车场的时候，不幸被告知由于台风有原因，湿地栈道被破坏了，直到明年都要进行修复工程。<br>尽管这次出行是在我的鼓吹下，竟然也没有人抱怨和吐槽，也许以前的我早就暴跳如雷了。不过现在我似乎也变得比较随意，想想还可以摘橘子（不过对于不能让小朋友捉到螃蟹觉得有点惭愧）。<br>这次出去玩也是一个教训，就是每次做事情都应该做充足的准备，即便这件事情曾经很好地完成过，也不能给自己留下过好的预期。</p></li><li><p>崇明荷花塘<br><strong>强烈不推荐秋天去！！！</strong><br><img src="https://i.imgur.com/RtDl1Nh.jpg" alt="Imgur"><br><em>如图，全是荷叶，基本没有荷花了&#x3D;。&#x3D;，图中是同事和他的小盆友。</em><br>不过在荷花塘遇到了神奇的植物，看起来像是超级小的苹果和山楂，名字也很奇怪，已经不记得了。<br><img src="https://i.imgur.com/9BvzW2L.jpg" alt="Imgur"></p></li><li><p>摘橘子<br>崇明岛的橘子10斤只要20元，震惊！老板还要请我11月中旬再来摘，那是橘子真正成熟的季节。<br><img src="https://i.imgur.com/QyzwbpX.jpg" alt="Imgur"></p></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;从金桥出发，租车到达崇明岛。虽然是国庆期间，路上也不怎么堵车，一路都在睡觉。&lt;br&gt;到达崇明岛前经过了一个小岛，阳光很好，在树影交错的路上行驶。路两边有卖橘子、螃蟹等各种特产的小贩。&lt;br&gt;&lt;img src=&quot;https://i.imgur.com/jiQXXYf.jpg&quot; alt=&quot;Imgur&quot;&gt;&lt;br&gt;&lt;em&gt;超级温馨啊，想想自己岁数大的时候，头发斑白，也能像这两位老人一样幸福&lt;/em&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="玩玩玩" scheme="https://www.suikammd.com/zh-Hans/tags/%E7%8E%A9%E7%8E%A9%E7%8E%A9/"/>
+    <category term="petalinux" scheme="https://suikammd.github.io/zh-Hans/tags/petalinux/"/>
     
   </entry>
   
   <entry>
     <title>elasticsearch rollup</title>
-    <link href="https://www.suikammd.com/zh-Hans/2018/10/12/elasticsearch-rollup/"/>
-    <id>https://www.suikammd.com/zh-Hans/2018/10/12/elasticsearch-rollup/</id>
+    <link href="https://suikammd.github.io/zh-Hans/2018/10/12/elasticsearch-rollup/"/>
+    <id>https://suikammd.github.io/zh-Hans/2018/10/12/elasticsearch-rollup/</id>
     <published>2018-10-12T05:01:47.000Z</published>
     <updated>2026-11-19T12:58:15.308Z</updated>
     
@@ -428,7 +409,26 @@
     
     
     
-    <category term="elasticsearch" scheme="https://www.suikammd.com/zh-Hans/tags/elasticsearch/"/>
+    <category term="elasticsearch" scheme="https://suikammd.github.io/zh-Hans/tags/elasticsearch/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>崇明岛一日游</title>
+    <link href="https://suikammd.github.io/zh-Hans/2018/10/12/chongming_island/"/>
+    <id>https://suikammd.github.io/zh-Hans/2018/10/12/chongming_island/</id>
+    <published>2018-10-12T05:01:47.000Z</published>
+    <updated>2026-11-19T12:58:15.308Z</updated>
+    
+    <content type="html"><![CDATA[<p>从金桥出发，租车到达崇明岛。虽然是国庆期间，路上也不怎么堵车，一路都在睡觉。<br>到达崇明岛前经过了一个小岛，阳光很好，在树影交错的路上行驶。路两边有卖橘子、螃蟹等各种特产的小贩。<br><img src="https://i.imgur.com/jiQXXYf.jpg" alt="Imgur"><br><em>超级温馨啊，想想自己岁数大的时候，头发斑白，也能像这两位老人一样幸福</em></p><span id="more"></span><ul><li><p>东滩湿地<br><img src="https://i.imgur.com/rbUpFwU.jpg" alt="Imgur"><br><img src="https://i.imgur.com/kBCYNsW.jpg" alt="Imgur"></p></li><li><p>西沙湿地<br>本来这部分是这篇博客的重点。西沙湿地到处是芦苇，芦苇荡里藏着很多红色的小螃蟹。去年的时候，我们买了肉钓上来一大袋小螃蟹，小螃蟹蠢蠢的闻到肉味就开心的抓着肉怎么都不放开，但是被捉进袋子里之后反而不吃肉了，让人无法理解。后来离开湿地之后，路上摘了一袋子橘子，吃着吃着橘子想着螃蟹被吃掉也很可怜就放了。<br>我们一行6个人到达湿地停车场的时候，不幸被告知由于台风有原因，湿地栈道被破坏了，直到明年都要进行修复工程。<br>尽管这次出行是在我的鼓吹下，竟然也没有人抱怨和吐槽，也许以前的我早就暴跳如雷了。不过现在我似乎也变得比较随意，想想还可以摘橘子（不过对于不能让小朋友捉到螃蟹觉得有点惭愧）。<br>这次出去玩也是一个教训，就是每次做事情都应该做充足的准备，即便这件事情曾经很好地完成过，也不能给自己留下过好的预期。</p></li><li><p>崇明荷花塘<br><strong>强烈不推荐秋天去！！！</strong><br><img src="https://i.imgur.com/RtDl1Nh.jpg" alt="Imgur"><br><em>如图，全是荷叶，基本没有荷花了&#x3D;。&#x3D;，图中是同事和他的小盆友。</em><br>不过在荷花塘遇到了神奇的植物，看起来像是超级小的苹果和山楂，名字也很奇怪，已经不记得了。<br><img src="https://i.imgur.com/9BvzW2L.jpg" alt="Imgur"></p></li><li><p>摘橘子<br>崇明岛的橘子10斤只要20元，震惊！老板还要请我11月中旬再来摘，那是橘子真正成熟的季节。<br><img src="https://i.imgur.com/QyzwbpX.jpg" alt="Imgur"></p></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;从金桥出发，租车到达崇明岛。虽然是国庆期间，路上也不怎么堵车，一路都在睡觉。&lt;br&gt;到达崇明岛前经过了一个小岛，阳光很好，在树影交错的路上行驶。路两边有卖橘子、螃蟹等各种特产的小贩。&lt;br&gt;&lt;img src=&quot;https://i.imgur.com/jiQXXYf.jpg&quot; alt=&quot;Imgur&quot;&gt;&lt;br&gt;&lt;em&gt;超级温馨啊，想想自己岁数大的时候，头发斑白，也能像这两位老人一样幸福&lt;/em&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="玩玩玩" scheme="https://suikammd.github.io/zh-Hans/tags/%E7%8E%A9%E7%8E%A9%E7%8E%A9/"/>
     
   </entry>
   
