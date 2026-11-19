@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="Implementing a SOCKS5 Proxy with Rust"><meta name="keywords" content="rust"><meta name="author" content="suikammd"><meta name="copyright" content="suikammd"><title>Implementing a SOCKS5 Proxy with Rust | Suikammd's Blog</title><link rel="canonical" href="https://www.suikammd.com/2021/09/11/rust-proxy/"><link rel="alternate" hreflang="en" href="https://www.suikammd.com/2021/09/11/rust-proxy/"><link rel="alternate" hreflang="zh-Hans" href="https://www.suikammd.com/zh-Hans/2021/09/11/rust-proxy/"><link rel="alternate" hreflang="x-default" href="https://www.suikammd.com/2021/09/11/rust-proxy/"><link rel="alternate" type="application/atom+xml" title="Suikammd's Blog" href="https://www.suikammd.com/atom.xml"><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script><meta name="generator" content="Hexo 5.4.2"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#What-are-this-proxy%E2%80%99s-features"><span class="toc-number">1.</span> <span class="toc-text">What are this proxy’s features?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Prerequisites"><span class="toc-number">2.</span> <span class="toc-text">Prerequisites</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Overall-client-side-flow"><span class="toc-number">3.</span> <span class="toc-text">Overall client-side flow</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-design"><span class="toc-number">4.</span> <span class="toc-text">Code design</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Parsing-the-SOCKS5-protocol"><span class="toc-number">4.1.</span> <span class="toc-text">Parsing the SOCKS5 protocol</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Custom-packet-structure"><span class="toc-number">4.2.</span> <span class="toc-text">Custom packet structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Connection-pool-implementation"><span class="toc-number">4.3.</span> <span class="toc-text">Connection pool implementation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Implementing-AsyncRead-AsyncWrite-for-WebSocketStream"><span class="toc-number">4.4.</span> <span class="toc-text">Implementing AsyncRead + AsyncWrite for WebSocketStream</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Summary"><span class="toc-number">5.</span> <span class="toc-text">Summary</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src></div><div class="author-info__name text-center">suikammd</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">18</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">10</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Suikammd's Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a><a class="site-page language-switch" href="/zh-Hans/2021/09/11/rust-proxy/" hreflang="zh-Hans" aria-label="Switch to Chinese">中文</a></span></div><div id="post-info"><div id="post-title">Implementing a SOCKS5 Proxy with Rust</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2021-09-11</time><span class="post-meta__separator">|</span><i class="fa fa-comment-o post-meta__icon" aria-hidden="true"></i><a href="/2021/09/11/rust-proxy/#disqus_thread"><span class="disqus-comment-count" data-disqus-identifier="/2021/09/11/rust-proxy/"></span></a></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><p>The first step toward becoming familiar with a language might be writing a proxy with it. After studying Rust syntax for a long time, I still had little opportunity to use it at work, so I had to create a need for it myself. I hope to find a job writing Rust in the future, or one that gives me the freedom to learn new things.</p>
+<h2 id="What-are-this-proxy’s-features"><a href="#What-are-this-proxy’s-features" class="headerlink" title="What are this proxy’s features?"></a>What are this proxy’s features?</h2><ul>
+<li>Based on Rust</li>
+</ul>
+<p>The main purpose is to practice writing Rust. Rust is also safe and efficient.</p>
+<ul>
+<li>Based on TLS WebSocket</li>
+</ul>
+<p>Getting past the mysterious wall requires an encrypted connection; otherwise, it can easily get killed. A common approach, like the one used by Shadowsocks, is to define a custom encryption protocol, but that is rather troublesome. To keep things simple, I used TLS WebSocket directly for this purpose.</p>
+<ul>
+<li>Pooled WebSocket connections</li>
+</ul>
+<p>The benefits of connection pooling hardly need explaining. Eliminating connection establishment time makes the proxy faster.</p>
+<p>The overall proxy flow looks like this:</p>
+<p><img src="https://i.imgur.com/jlSE51Z.png" alt="Rust proxy pipeline"></p>
+<p>Source code: <a target="_blank" rel="noopener" href="https://github.com/suikammd/rust-proxy">https://github.com/suikammd/rust-proxy</a></p>
+<span id="more"></span>
+
+<h2 id="Prerequisites"><a href="#Prerequisites" class="headerlink" title="Prerequisites"></a>Prerequisites</h2><p>(Not required)</p>
+<h2 id="Overall-client-side-flow"><a href="#Overall-client-side-flow" class="headerlink" title="Overall client-side flow"></a>Overall client-side flow</h2><p><img src="https://i.imgur.com/oqe5bDA.png" alt="Proxy client"></p>
+<h2 id="Code-design"><a href="#Code-design" class="headerlink" title="Code design"></a>Code design</h2><p>The connection between the browser and the client is a regular SOCKS5 connection, and the connection between the server and the destination the browser wants to access is a regular TCP connection. Between the client and server, however, there are pooled WebSocket connections. There are four main things we need to do:</p>
+<p>(1) Parse the SOCKS5 protocol to obtain the destination address the browser wants to access.</p>
+<p>(2) Define custom packets. The same WebSocket connection corresponds to multiple SOCKS5 connections from the browser to the client. Therefore, when a new SOCKS5 connection is established, the server needs to know the address the browser wants to access (a Connect packet). When the SOCKS5 connection is closed, a termination packet needs to be sent (a Close packet), so that the server returns to the state of waiting for a Connect packet.</p>
+<p>(3) Pool WebSocket connections, which involves implementing a general-purpose connection pool.</p>
+<p>(4) Tokio provides a bidirectional copying method that requires the data structure to implement the AsyncRead + AsyncWrite traits. Because the WebSocketStream defined by <a target="_blank" rel="noopener" href="https://github.com/snapview/tokio-tungstenite">tokio_tungstenite</a> does not implement these two traits, we also need to implement them ourselves.</p>
+<h3 id="Parsing-the-SOCKS5-protocol"><a href="#Parsing-the-SOCKS5-protocol" class="headerlink" title="Parsing the SOCKS5 protocol"></a>Parsing the SOCKS5 protocol</h3><ul>
+<li>The browser and client agree on the protocol version and authentication method.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>VER</th>
+<th>NMETHODS</th>
+<th>METHODS</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>1-255</td>
+</tr>
+</tbody></table>
+<p>VER: SOCKS version, which is 0x05 here.</p>
+<p>NMETHODS: The number of METHODS.</p>
+<p>METHODS: Authentication methods supported by the client.</p>
+<ul>
+<li>The client selects one of the authentication methods specified by the browser and replies with it.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">VER</th>
+<th align="center">METHOD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody></table>
+<p>METHOD: The authentication method selected by the client.</p>
+<p>For now, this article uses 0x00 (meaning no authentication is required).</p>
+<ul>
+<li>The browser sends a request message telling the client which address it wants to access.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="center">VER</th>
+<th align="center">CMD</th>
+<th align="center">RSV</th>
+<th align="center">ATYP</th>
+<th align="center">DST.ADDR</th>
+<th align="center">DST.PORT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">1</td>
+<td align="center">1</td>
+<td align="center">0x00</td>
+<td align="center">1</td>
+<td align="center">Variable</td>
+<td align="center">2</td>
+</tr>
+</tbody></table>
+<p>CMD: SOCKS command code: 0x01 (Connect request), 0x02 (BIND request), or 0x03 (UDP relay).</p>
+<p>RSV: Reserved byte, 0x00.</p>
+<p>ATYP: Type of DST.ADDR: 0x01 (IPv4), 0x03 (domain name), or 0x04 (IPv6).</p>
+<p>DST.ADDR: Destination address.</p>
+<p>DST.PORT: Destination port.</p>
+<ul>
+<li>After the client processes the address the browser wants to access, it returns the result to the browser.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>VER</th>
+<th>REP</th>
+<th>RSV</th>
+<th>ATYP</th>
+<th>BND.ADDR</th>
+<th>BND.PORT</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>1</td>
+<td>0x00</td>
+<td>1</td>
+<td>Variable</td>
+<td>2</td>
+</tr>
+</tbody></table>
+<p> The content is almost the same as the browser’s request packet.</p>
+<h3 id="Custom-packet-structure"><a href="#Custom-packet-structure" class="headerlink" title="Custom packet structure"></a>Custom packet structure</h3><p>There are three types of packets sent from the client to the server: Connect packets (which tell the server the destination address the browser wants to access), Data packets (browser request data), and Close packets (which indicate that the SOCKS5 connection has been disconnected or has ended), as shown below.</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">enum</span> <span class="title class_">Packet</span> &#123;</span><br><span class="line">    <span class="title function_ invoke__">Connect</span>(Addr),</span><br><span class="line">    <span class="title function_ invoke__">Data</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="title function_ invoke__">Close</span>(),</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">enum</span> <span class="title class_">Addr</span> &#123;</span><br><span class="line">    <span class="title function_ invoke__">IpV4</span>(([<span class="type">u8</span>; <span class="number">4</span>], <span class="type">u16</span>)),</span><br><span class="line">    <span class="title function_ invoke__">Domain</span>((<span class="type">String</span>, <span class="type">u16</span>)),</span><br><span class="line">    <span class="title function_ invoke__">IpV6</span>(([<span class="type">u8</span>; <span class="number">16</span>], <span class="type">u16</span>)),</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Incidentally, this repository is implemented using the <a target="_blank" rel="noopener" href="https://github.com/snapview/tokio-tungstenite">tokio_tungstenite</a> WebSocket library. Its design is unreasonable in many ways. For example, there is no way to reuse buffers. Consider the following code: when I construct a Binary packet, I need to pass in a Vec. Even if I pass in another kind of packet, it is converted into a Vec through <code>bin.into()</code>, effectively making another copy. It would be better to pass in a Vec directly. If I optimize the proxy later, I will consider rewriting this WebSocket library.</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">enum</span> <span class="title class_">Message</span> &#123;</span><br><span class="line">    <span class="comment">/// A text WebSocket message</span></span><br><span class="line">    <span class="title function_ invoke__">Text</span>(<span class="type">String</span>),</span><br><span class="line">    <span class="comment">/// A binary WebSocket message</span></span><br><span class="line">    <span class="title function_ invoke__">Binary</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="comment">/// A ping message with the specified payload</span></span><br><span class="line">    <span class="comment">///</span></span><br><span class="line">    <span class="comment">/// The payload here must have a length less than 125 bytes</span></span><br><span class="line">    <span class="title function_ invoke__">Ping</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="comment">/// A pong message with the specified payload</span></span><br><span class="line">    <span class="comment">///</span></span><br><span class="line">    <span class="comment">/// The payload here must have a length less than 125 bytes</span></span><br><span class="line">    <span class="title function_ invoke__">Pong</span>(<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;),</span><br><span class="line">    <span class="comment">/// A close message with the optional close frame.</span></span><br><span class="line">    <span class="title function_ invoke__">Close</span>(<span class="type">Option</span>&lt;CloseFrame&lt;<span class="symbol">&#x27;static</span>&gt;&gt;),</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">impl</span> <span class="title class_">Message</span> &#123;</span><br><span class="line">    <span class="comment">/// Create a new binary WebSocket message by converting to Vec&lt;u8&gt;.</span></span><br><span class="line">    <span class="keyword">pub</span> <span class="keyword">fn</span> <span class="title function_">binary</span>&lt;B&gt;(bin: B) <span class="punctuation">-&gt;</span> Message</span><br><span class="line">    <span class="keyword">where</span></span><br><span class="line">        B: <span class="built_in">Into</span>&lt;<span class="type">Vec</span>&lt;<span class="type">u8</span>&gt;&gt;,</span><br><span class="line">    &#123;</span><br><span class="line">        Message::<span class="title function_ invoke__">Binary</span>(bin.<span class="title function_ invoke__">into</span>())</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Connection-pool-implementation"><a href="#Connection-pool-implementation" class="headerlink" title="Connection pool implementation"></a>Connection pool implementation</h3><p>As the name suggests, a connection pool contains a large number of already established connections. Its value is beyond doubt in a proxy scenario where the remote endpoint is fixed. What functionality does our connection pool need? In short, it takes connections out of the pool and puts them back. To make the pool fast enough, however, we can optimize connection acquisition as follows: if there are no idle connections in the pool, we can put a waiter in the pool (actually the sending end of a channel). When someone finishes using a connection, they can hand it directly to this waiter. We also create a new connection at the same time, then use <code>future::select</code> to wait for either the waiter to receive a connection or the new connection to finish being created.</p>
+<p>At this point, we can summarize the pool definition, which could look like this:</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">Pool</span>&lt;T&gt; &#123;</span><br><span class="line">    inner: Arc&lt;Mutex&lt;Inner&lt;T&gt;&gt;&gt;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">Inner</span>&lt;T&gt; &#123;</span><br><span class="line">    idle: <span class="type">Vec</span>&lt;T&gt;,</span><br><span class="line">    waiters: VecDeque&lt;oneshot::Sender&lt;T&gt;&gt;,</span><br><span class="line">    max_idle: <span class="type">usize</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>idle holds idle connections, waiters holds the waiters inserted when requesting a connection from the pool, and max_idle is the maximum number of idle connections.</p>
+<p>(1) What does this pool need to do?</p>
+<ul>
+<li><p>Manage idle connections: this is essentially just a vec.</p>
+</li>
+<li><p>Take a connection out of the pool.</p>
+</li>
+</ul>
+<p>There are two cases:</p>
+<p>(1) If idle has an available connection, pop an idle connection directly from idle.</p>
+<p>(2) Push a new waiter into waiters, and use the make_service passed into the get method to create a new connection at the same time. Then use <code>future::select</code> to wait for either someone to return a used connection to the waiter or the new connection to finish being created. There is also an interesting optimization here: if someone returns a used connection to the waiter first, wouldn’t half-creating the new connection be wasteful? Not a problem. We can use <code>tokio::spwan</code> to continue creating the new connection in the background, then put the newly created connection into idle.</p>
+<p>The returned data structure is defined as follows: one field is the connection itself, and the other is a weak reference to the pool. Why does inner need to be an Option? Because this makes it convenient to take the connection out without triggering <code>Pooled</code>‘s destructor, and we can insert it back after use. Why do we need to hold a weak reference to the pool? Because we need to know which pool to return the connection to.</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">struct</span> <span class="title class_">Pooled</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">pub</span> inner: <span class="type">Option</span>&lt;T&gt;,</span><br><span class="line">    pool: Weak&lt;Mutex&lt;Inner&lt;T&gt;&gt;&gt;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>By now, you can probably imagine how connections are returned to the pool.</p>
+<ul>
+<li>Return a connection to the pool.</li>
+</ul>
+<p>When a connection is no longer being used, we do not close it. Instead, its destructor returns it to the pool. Therefore, we can implement the <code>Drop</code> trait for <code>Pooled</code> and call the pool’s put method in drop to actually return the connection to the pool.</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">impl</span>&lt;T&gt; <span class="built_in">Drop</span> <span class="keyword">for</span> <span class="title class_">Pooled</span>&lt;T&gt; &#123;</span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">drop</span>(&amp;<span class="keyword">mut</span> <span class="keyword">self</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">self</span>.inner.<span class="title function_ invoke__">is_none</span>() &#123;</span><br><span class="line">            info!(<span class="string">&quot;inner drop is not some?&quot;</span>);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">let</span> <span class="variable">t</span> = <span class="keyword">self</span>.inner.<span class="title function_ invoke__">take</span>().<span class="title function_ invoke__">unwrap</span>();</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">let</span> <span class="variable">Some</span>(pool) = <span class="keyword">self</span>.pool.<span class="title function_ invoke__">upgrade</span>() &#123;</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">let</span> <span class="variable">Ok</span>(<span class="keyword">mut</span> pool) = pool.<span class="title function_ invoke__">lock</span>() &#123;</span><br><span class="line">                pool.<span class="title function_ invoke__">put</span>(t);</span><br><span class="line">                info!(<span class="string">&quot;successfully put ws stream back to pool&quot;</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>The acquisition logic tells us what returning a connection to the pool should do. First, check whether there is a waiter. If there is, give the connection directly to the waiter; if not, put the connection back into idle.</p>
+<ul>
+<li>Detect connection status.</li>
+</ul>
+<p>If a connection in the pool dies and we do not detect it promptly, the client may receive a dead connection, resulting in a terrible user experience. Therefore, we also need to periodically check the status of connections in the pool. To do this, we need to define a Poolable trait and remove a connection from the pool if it is not reuseable.</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">trait</span> <span class="title class_">Poolable</span> &#123;</span><br><span class="line">    <span class="comment">// check if the connection is opened</span></span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">reuseable</span>(&amp;<span class="keyword">self</span>) <span class="punctuation">-&gt;</span> <span class="type">bool</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Of course, this is actually a fairly general-purpose implementation, but the code here does not accomplish this yet. The underlying layer cannot detect the connection status, so the upper layer still needs to actively perform health checks. That logic has not been implemented yet.</p>
+<h3 id="Implementing-AsyncRead-AsyncWrite-for-WebSocketStream"><a href="#Implementing-AsyncRead-AsyncWrite-for-WebSocketStream" class="headerlink" title="Implementing AsyncRead + AsyncWrite for WebSocketStream"></a>Implementing AsyncRead + AsyncWrite for WebSocketStream</h3><p>There are many aspects of <a target="_blank" rel="noopener" href="https://github.com/snapview/tokio-tungstenite">tokio_tungstenite</a>‘s design that seem strange to me. On the client side, whether you want to establish a TLS or non-TLS connection, you always get <code>WebSocketStream&lt;MaybeTlsStream&lt;TcpStream&gt;&gt;</code>, while the server always gets <code>WebSocketStream&lt;TlsStream&lt;TcpStream&gt;&gt;</code>. Fortunately, both MaybeTlsStream and TlsStream implement AsyncRead and AsyncWrite, so we do not have to implement these traits separately for the client and server connections.</p>
+<p>For AsyncRead, we need to implement the poll_read method.</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">trait</span> <span class="title class_">AsyncRead</span> &#123;</span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_read</span>(</span><br><span class="line">        <span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;,</span><br><span class="line">        cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;,</span><br><span class="line">        buf: &amp;<span class="keyword">mut</span> ReadBuf&lt;<span class="symbol">&#x27;_</span>&gt;,</span><br><span class="line">    ) <span class="punctuation">-&gt;</span> Poll&lt;io::<span class="type">Result</span>&lt;()&gt;&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>For AsyncWrite, we need to implement poll_write, poll_flush, and poll_shutdown.</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">pub</span> <span class="keyword">trait</span> <span class="title class_">AsyncWrite</span> &#123;</span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_write</span>(</span><br><span class="line">        <span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;,</span><br><span class="line">        cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;,</span><br><span class="line">        buf: &amp;[<span class="type">u8</span>],</span><br><span class="line">    ) <span class="punctuation">-&gt;</span> Poll&lt;<span class="type">Result</span>&lt;<span class="type">usize</span>, io::Error&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_flush</span>(<span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;, cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;) <span class="punctuation">-&gt;</span> Poll&lt;<span class="type">Result</span>&lt;(), io::Error&gt;&gt;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">fn</span> <span class="title function_">poll_shutdown</span>(<span class="keyword">self</span>: Pin&lt;&amp;<span class="keyword">mut</span> <span class="keyword">Self</span>&gt;, cx: &amp;<span class="keyword">mut</span> Context&lt;<span class="symbol">&#x27;_</span>&gt;) <span class="punctuation">-&gt;</span> Poll&lt;<span class="type">Result</span>&lt;(), io::Error&gt;&gt;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>There are two points to note. When copy_bidirectional completes, it executes poll_shutdown. Since we need to reuse the underlying connection, we should not actually close the connection. Instead, we send a Close packet (telling the peer that the SOCKS5 connection it carried has ended and that it can accept a new SOCKS connection), then return <code>Poll::Ready(Ok(()))</code>. The other point is that the usize length returned by poll_write must not exceed the length of buf (see another post, <a href="/2021/09/22/record-a-weird-bug-fix-travel/">An Interesting Debugging Journey</a>, for the specific reason).</p>
+<h2 id="Summary"><a href="#Summary" class="headerlink" title="Summary"></a>Summary</h2><p>Writing a working proxy in Rust is still quite easy, but making it sufficiently robust is difficult. There are many details to consider, especially error handling when connections behave abnormally. Next, I want to prevent dead connections from remaining in the connection pool. This requires both actively checking connection health and retrying on the client side (when the underlying connection behaves abnormally, the upper layer triggers a limited number of retries).</p>
+</div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">suikammd</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://www.suikammd.com/2021/09/11/rust-proxy/">https://www.suikammd.com/2021/09/11/rust-proxy/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/rust/">rust</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2021/09/22/record-a-weird-bug-fix-travel/"><i class="fa fa-chevron-left">  </i><span>An Interesting Debugging Journey</span></a></div><div class="next-post pull-right"><a href="/2021/08/15/2021-bytedance-ctf/"><span>2021 ByteDance CTF Writeup</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="disqus_thread"></div><script>var unused = null;
+var disqus_config = function () {
+  this.page.url = "https://www.suikammd.com/2021/09/11/rust-proxy/";
+  this.page.identifier = "/2021/09/11/rust-proxy/";
+  this.page.title = "Implementing a SOCKS5 Proxy with Rust";
+}
+var d = document, s = d.createElement('script');
+s.src = "https://" + 'suikammd' +".disqus.com/embed.js";
+s.setAttribute('data-timestamp', '' + +new Date());
+(d.head || d.body).appendChild(s);</script><script id="dsq-count-scr" src="https://suikammd.disqus.com/count.js" async></script></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2026 By suikammd</div><div class="framework-info"><span>Driven - </span><a target="_blank" rel="noopener" href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+  $('#nav').addClass('is-mobile')
+  $('footer').addClass('is-mobile')
+}</script></body></html>
