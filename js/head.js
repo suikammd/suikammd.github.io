@@ -1,26 +1,37 @@
-$(function () {
-  $('.toggle-menu').on('click', function () {
-    if (!$('.menus').is(':visible')) {
-      $('.menus').velocity('stop')
-        .velocity('transition.slideDownIn', { duration: 300 })
+(function () {
+  var toggle = document.querySelector('.toggle-menu');
+  var menus = document.querySelector('.menus');
+  if (!toggle || !menus) return;
+
+  function closeMenu() {
+    menus.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  toggle.addEventListener('click', function (event) {
+    event.stopPropagation();
+    var isOpen = menus.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!menus.contains(event.target) && !toggle.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  function syncLayout() {
+    if (window.innerWidth <= 768) {
+      menus.removeAttribute('style');
     } else {
-      $('.menus').velocity('stop')
-        .velocity('transition.slideUpOut', { duration: 300 })
+      closeMenu();
     }
-  })
-  $(document).on('click', function (e) {
-    var flag = $('.menus')[0].contains(e.target) || $('.toggle-menu')[0].contains(e.target)
-    if (!flag && $('.toggle-menu').is(':visible')) {
-      $('.menus').velocity('stop')
-        .velocity('transition.slideUpOut', { duration: 300 })
-    }
-  })
-  $(window).on('resize', function (e) {
-    if (!$('.toggle-menu').is(':visible')) {
-      if (!$('.menus').is(':visible')) {
-        $('.menus').velocity('stop')
-          .velocity('transition.slideDownIn', { duration: 300 })
-      }
-    }
-  })
-})
+  }
+
+  syncLayout();
+  window.addEventListener('resize', syncLayout);
+})();
